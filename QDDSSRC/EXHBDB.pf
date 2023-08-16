@@ -1,0 +1,10 @@
+     A                                      UNIQUE
+     A          R EXHBREC
+     A            EXHBDBID       3B 0
+     A            EXHBITOR      20A
+     A            EXHBCITY      20A
+     A            EXHBSTATE      2A
+     A            EXHBTITLE     50A
+     A            EXHBDESC     500A
+     A            ELIGIBLE       1B 0
+     A          K EXHBDBID

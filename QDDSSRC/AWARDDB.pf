@@ -1,0 +1,6 @@
+     A                                      UNIQUE
+     A          R AWARDRCD
+     A            AWARDID        3B 0
+     A            AWARDTITLE   100A
+     A            AWARDDESC   1000A
+     A          K AWARDID

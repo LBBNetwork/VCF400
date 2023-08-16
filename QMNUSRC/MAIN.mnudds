@@ -1,0 +1,108 @@
+     A* Free Form Menu: MAIN
+     A*%%TS  SD  20230807  211053  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3                  -
+     A                                             27 132 *DS4)
+     A                                      CHGINPDFT
+     A                                      INDARA
+     A                                      PRINT(*LIBL/QSYSPRT)
+     A          R MAIN
+     A*%%TS  SD  20230807  211053  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      DSPMOD(*DS3)
+     A                                      LOCK
+     A                                      SLNO(01)
+     A                                      CLRL(*ALL)
+     A                                      ALWROL
+     A                                      CF03
+     A                                      HELP
+     A                                      HOME
+     A                                      HLPRTN
+     A                                  1  2'MAIN'
+     A                                      COLOR(BLU)
+     A                                  3  2'           V I N T A G E  C '
+     A                                      COLOR(BLU)
+     A                                  5  7' H'
+     A                                  6  7'1.'
+     A                                  7  7'2.'
+     A* CMDPROMPT  Do not delete this DDS spec.
+     A                                019  2'Type Number, Press ENTER (right CT-
+     A                                      RL) '
+     A                                  2  2'Welcome'
+     A                                  2 10'to...'
+     A                                  3 32'M'
+     A                                  3 34'P'
+     A                                  3 36'U'
+     A                                  3 38'T'
+     A                                  3 40'E'
+     A                                  3 42'R'
+     A                                  3 45'F'
+     A                                  3 47'E'
+     A                                  3 49'S'
+     A                                  3 51'T'
+     A                                  3 53'I'
+     A                                  3 55'V'
+     A                                  3 57'A'
+     A                                  3 59'L'
+     A                                  6 10'Learn'
+     A                                  6 16'AS/400'
+     A                                  6 23'Navigation'
+     A                                  7 10'IBM'
+     A                                  7 14'Midrange'
+     A                                  7 23'History'
+     A                                  5 45'Democratic'
+     A                                  5 56'Tasks'
+     A                                  6 49'11.'
+     A                                  6 53'Nominate'
+     A                                  6 62'Exhibit'
+     A                                  6 70'for'
+     A                                  6 74'Award'
+     A                                  7 49'12.'
+     A                                  7 53'Sign'
+     A                                  7 58'Exhibit'
+     A                                  7 66'Guestbook'
+     A                                  8  7'3.'
+     A                                  8 10'About'
+     A                                  8 16'This'
+     A                                  8 21'System'
+     A                                  9  7'4.'
+     A                                  9 10'About'
+     A                                  9 17'Gertie'
+     A                                  9 25'(System/'
+     A                                  9 45'System'
+     A                                  9 52'Tasks'
+     A                                 10 49'80.'
+     A                                 10 53'Sign'
+     A                                 10 58'Off'
+     A                                 11  2'Office'
+     A                                 11  9'Tasks'
+     A                                 12  7'5.'
+     A                                 12 10'Start'
+     A                                 12 16'OfficeVision/400'
+     A                                 12 45'Administration'
+     A                                 13  7'6.'
+     A                                 13 10'Start'
+     A                                 13 16'the'
+     A                                 13 20'Calendar'
+     A                                 13 49'90.'
+     A                                 13 53'Go'
+     A                                 13 56'to'
+     A                                 13 59'Admin'
+     A                                 13 65'Menu'
+     A                                 14  7'7.'
+     A                                 14 10'Start'
+     A                                 14 16'the'
+     A                                 14 20'Clock'
+     A                                 16  2'Entertainment'
+     A                                 17  7'8.'
+     A                                 17 10'Play'
+     A                                 17 15'Snake'
+     A                                 18  7'9.'
+     A                                 18 10'Play'
+     A                                 18 15'Yahtzee'
+     A                                  3 62'2'
+     A                                  3 64'0'
+     A                                  3 66'2'
+     A                                  3 68'4'
+     A                                 17 23'10.'
+     A                                 17 27'Play'
+     A                                 17 32'Pac-MAN'

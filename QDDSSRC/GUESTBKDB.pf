@@ -1,0 +1,8 @@
+
+     A                                      UNIQUE
+     A          R GUESTBKRCD
+     A            CMTID          4B 0
+     A            EXHBID         3B 0
+     A            GUESTNAME     10A
+     A            GUESTCMT    1000A
+     A          K CMTID
