@@ -1,0 +1,8 @@
+000010 230820      A*%%TS  SD  20230820  133657  QSECOFR     REL-V4R4M0  5769-PW1             
+000020 230820      A*%%EC                                                                     
+000030 230820      A                                      DSPSIZ(24 80 *DS3)                  
+000040 230820      A          R TESTPARM                                                      
+000050 230820      A*%%TS  SD  20230820  133657  QSECOFR     REL-V4R4M0  5769-PW1             
+000060 230820      A                                  4 10'Passed Parameter:'                 
+000070 230820      A            PARMOUT       20   O  6 10                                    
+000080 230820      A                                 11 10'Press ENTER to quit'               
