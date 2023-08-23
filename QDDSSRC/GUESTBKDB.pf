@@ -1,8 +1,6 @@
-
-     A                                      UNIQUE
-     A          R GUESTBKRCD
-     A            CMTID          4B 0
-     A            EXHBID         3B 0
-     A            GUESTNAME     10A
-     A            GUESTCMT    1000A
-     A          K CMTID
+000100 230808                                                                                 
+000200 230808      A          R GUESTBKRCD                                                    
+000300 230808      A            CMTID          4B 0                                           
+000400 230808      A            EXHBID         3B 0                                           
+000500 230808      A            GUESTNAME     10A                                             
+000600 230808      A            GUESTCMT    1000A                                             
