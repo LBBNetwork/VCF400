@@ -1,4 +1,4 @@
-     A*%%TS  SD  20230826  153521  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20230826  180025  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R ADDCMT
@@ -27,32 +27,84 @@
      A                                 17  6'Debug: Comment is visible?'
      A            DBGVIS         1   I 17 36
      A          R ENDCMT
-     A*%%TS  SD  20230823  165844  QSECOFR     REL-V4R4M0  5769-PW1
-     A                                  2  4'THANK YOU FOR COMMENTING!'
-     A                                  4  4'Press ENTER to exit'
+     A*%%TS  SD  20230826  173022  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  2  5' _______ _    _          _   _ _  -
+     A                                      __ _____          '
+     A                                  3  5'|__   __| |  | |   /\   | \ | | |/-
+     A                                       // ____|         '
+     A                                  4  5'   | |  | |__| |  /  \  |  \| |   -
+     A                                      /| (___           '
+     A                                  4 58'                          '
+     A                                  5  5'   | |  |  __  | / /\ \ | . ` |  /-
+     A                                        \___ \          '
+     A                                  5 58'                          '
+     A                                  6  5'   | |  | |  | |/ ____ \| |\  | . -
+     A                                      \ ____) |         '
+     A                                  6 58'                          '
+     A                                  7  5' __|_|_ |_|_ |_/_/_   \_\_|_\_|_|\-
+     A                                      _\_____/__        '
+     A                                  7 58'                          '
+     A                                  8  5'|  ____/ __ \|  __ \  |__   __| | -
+     A                                       | |  ____|       '
+     A                                  8 58'                          '
+     A                                  9  5'| |__ | |  | | |__) |    | |  | |_-
+     A                                      _| | |__          '
+     A                                  9 58'                          '
+     A                                 10  5'|  __|| |  | |  _  /     | |  |  _-
+     A                                      _  |  __|         '
+     A                                 10 58'                          '
+     A                                 11  5'| |   | |__| | | \ \     | |  | | -
+     A                                       | | |____        '
+     A                                 11 58'                          '
+     A                                 12  5'|_|____\____/|_|  \_\__  |_|__|_|_-
+     A                                       |_|______|___ _  '
+     A                                 12 58'                          '
+     A                                 13  5' / ____/ __ \|  \/  |  \/  |  ____-
+     A                                      | \ | |__   __| | '
+     A                                 13 58'                          '
+     A                                 14  5'| |   | |  | | \  / | \  / | |__  -
+     A                                      |  \| |  | |  | | '
+     A                                 14 58'                          '
+     A                                 15  5'| |   | |  | | |\/| | |\/| |  __| -
+     A                                      | . ` |  | |  | | '
+     A                                 15 58'                          '
+     A                                 16  5'| |___| |__| | |  | | |  | | |____-
+     A                                      | |\  |  | |  |_| '
+     A                                 16 58'                          '
+     A                                 17  5' \_____\____/|_|  |_|_|  |_|______-
+     A                                      |_| \_|  |_|  (_) '
+     A                                 19  4'Thank you for commenting on this e-
+     A                                      xhibit!'
+     A                                 21  4'Press ENTER to exit.'
      A          R READCMT
-     A*%%TS  SD  20230826  141006  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20230826  180025  QSECOFR     REL-V4R4M0  5769-PW1
      A                                      CF05(05 'Submit')
      A                                      CF12(12 'Cancel')
      A                                  1  4'VINTAGE COMPUTER FESTIVAL'
      A                                  1 33'GUESTBOOK/400 - Read a Comment'
      A                                  3  4'Enter a Comment ID:'
-     A                                  4  4'-----------------------------------
+     A                                  5  4'-----------------------------------
      A                                      ------------------------------------
      A                                      -----'
-     A            OUTNAME       11A  O  5  4
-     A                                  5 18'says...'
-     A            OUTCMT       200A  O  7  5
-     A                                 13  5'Is this comment too obscene? Pleas-
+     A            OUTNAME       11A  O  6  4
+     A                                  6 18'says...'
+     A            OUTCMT       200A  O  8  5
+     A                                 19  5'Is this comment too obscene? Pleas-
      A                                      e report the Comment ID to the folk-
      A                                      s'
-     A                                 14  5'at the Midrange Madness! table and-
+     A                                 20  5'at the Midrange Madness! table and-
      A                                       we will address the comment.'
      A                                 24  5'Cmd5 / F5 = Submit  Cmd12 / F12 = -
      A                                      Cancel'
-     A            ERRLINE       20A  O  3 39COLOR(RED)
+     A            ERRLINE       20A  O  4  4COLOR(RED)
      A            INCMTID        4Y 0I  3 25CHECK(ME)
      A                                      CHECK(RZ)
+     A                                 11  4'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -----'
+     A                                  3 49'Currently hosting'
+     A            WTFCMTNUM      4A  O  3 67
+     A                                  4 49'comments and counting!'
      A          R HIDECMT
      A*%%TS  SD  20230826  153521  QSECOFR     REL-V4R4M0  5769-PW1
      A                                      CF05(05 'Submit')

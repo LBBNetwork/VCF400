@@ -12,6 +12,7 @@
      C*-----------------------------------------------
      C                   EXSR      CHKPARM
      C                   DOW       *IN05 = *OFF
+     C                   EXSR      GETTLCMT
      C                   EXFMT     READCMT
      C*
      C                   IF        INCMTID  = *ZERO
@@ -36,6 +37,15 @@
      C                   MOVEL     GUESTNAME     OUTNAME
      C                   MOVEL     GUESTCMT      OUTCMT
      C                   ENDIF
+     C                   ENDSR
+     C*-------------------------------------------------------
+     C     GETTLCMT      BEGSR
+     C                   READ      GUESTBKDB                              92
+     C     *IN92         DOWEQ     *OFF
+     C                   READ      GUESTBKDB                              92
+     C                   ENDDO
+     C*                  EVAL      WTFCMTNUM = CMTID
+     C                   MOVEL     CMTID         WTFCMTNUM
      C                   ENDSR
      C*-------------------------------------------------------
      C     CHKPARM       BEGSR
