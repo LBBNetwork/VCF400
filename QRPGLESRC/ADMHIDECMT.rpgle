@@ -1,45 +1,54 @@
      FGUESTBKDB UF A E           K DISK
-     FEXHBDB    IF   E           K DISK
      FGUESTBKSCRCF   E             WORKSTN
      DID               S              4P 0
+     DHIDEY            C                   CONST('Y')
+     DHIDEN            C                   CONST('N')
      DERRCMTID         C                   CONST('Must enter CommentID')
-     DERRHNAME         C                   CONST('Name Hidden')
-     DERRHCMT          C                   CONST('Sorry, this comment has been-
-     D                                             hidden by an admin.')
+     DERRYN            C                   CONST('Type Y or N')
+     DSTSOK            C                   CONST('Status updated')
      C*-----------------------------------------------
      C     *ENTRY        PLIST
      C                   PARM                    LAUNCH           20
      C*-----------------------------------------------
      C                   EXSR      CHKPARM
+     C                   EXSR      READDB
      C                   DOW       *IN05 = *OFF
-     C                   EXFMT     READCMT
+     C                   EXFMT     HIDECMT
      C*
-     C                   IF        INCMTID  = *ZERO
-     C                   EVAL      ERRLINE = ERRCMTID
-     C                   ENDIF
      C                   IF        *IN12 = *ON
      C                   MOVEL     *ON           *INLR
      C                   RETURN
      C                   ENDIF
      C*
      C                   ENDDO
-     C                   EXSR      READDB
+     C                   EXSR      HIDECMTSR
+     C                   MOVEL     STSOK         ERRLINE
      C*----------------------------------------------------
      C     READDB        BEGSR
      C                   EVAL      *IN05 = *OFF
-     C     INCMTID       SETLL     GUESTBKRCD
+     C     ID            SETLL     GUESTBKRCD
      C                   READ      GUESTBKDB
-     C                   IF        VISIBLE = 'N'
-     C                   MOVEL     ERRHNAME      OUTNAME
-     C                   MOVEL     ERRHCMT       OUTCMT
-     C                   ELSE
+     C                   MOVEL     ID            HIDECMTID
      C                   MOVEL     GUESTNAME     OUTNAME
      C                   MOVEL     GUESTCMT      OUTCMT
+     C                   MOVEL     VISIBLE       CURRHIDE
+     C                   ENDSR
+     C*-------------------------------------------------------
+     C     HIDECMTSR     BEGSR
+     C                   EVAL      *IN05 = *OFF
+     C*
+     C                   IF        INHIDEYN = 'Y'
+     C                   MOVEL     HIDEY         VISIBLE
+     C                   UPDATE    GUESTBKRCD
      C                   ENDIF
+     C*
+     C                   IF        INHIDEYN = 'N'
+     C                   MOVEL     HIDEN         VISIBLE
+     C                   UPDATE    GUESTBKRCD
+     C                   ENDIF
+     C*
      C                   ENDSR
      C*-------------------------------------------------------
      C     CHKPARM       BEGSR
-     C*    LAUNCH        SETLL     EXHBREC                                91
-     C*                  READ      EXHBDB
-     C*                  MOVEL     DBGEX         EXHBTITLE
+     C                   MOVEL     LAUNCH        ID
      C                   ENDSR

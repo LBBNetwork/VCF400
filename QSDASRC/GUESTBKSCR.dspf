@@ -1,8 +1,8 @@
-     A*%%TS  SD  20230825  210149  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20230826  153521  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R ADDCMT
-     A*%%TS  SD  20230823  184241  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20230826  142608  QSECOFR     REL-V4R4M0  5769-PW1
      A                                      CF05(05 'Submit')
      A                                      CF12(12 'Cancel')
      A                                  1  3'VINTAGE COMPUTER FESTIVAL'
@@ -10,10 +10,10 @@
      A                                  3  3'Your Name................:'
      A                                  4  3'Exhibit'
      A                                  4 11'ID...............:'
-     A            INNAME        16A  I  3 32
+     A            INNAME        16A  I  3 32CHECK(LC)
      A            INEXHBID       3A  I  4 32
      A                                  5  3'Comment..................:'
-     A            INCMT        200A  I  5 32
+     A            INCMT        200A  I  5 32CHECK(LC)
      A            ERRLINE       21A  O  9  4COLOR(RED)
      A                                 23  3'Cmd5 / F5 = Submit Comment'
      A                                 23 34'Cmd12 / F12 = Cancel'
@@ -24,23 +24,25 @@
      A                                 14 22'is'
      A            DBGEX         16A  O 14 41
      A            DBGPARM        5A  O 13 41
+     A                                 17  6'Debug: Comment is visible?'
+     A            DBGVIS         1   I 17 36
      A          R ENDCMT
      A*%%TS  SD  20230823  165844  QSECOFR     REL-V4R4M0  5769-PW1
      A                                  2  4'THANK YOU FOR COMMENTING!'
      A                                  4  4'Press ENTER to exit'
      A          R READCMT
-     A*%%TS  SD  20230825  210149  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20230826  141006  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF05(05 'Submit')
+     A                                      CF12(12 'Cancel')
      A                                  1  4'VINTAGE COMPUTER FESTIVAL'
      A                                  1 33'GUESTBOOK/400 - Read a Comment'
      A                                  3  4'Enter a Comment ID:'
-     A            INCMTID        5Y 0I  3 26CHECK(ME)
-     A                                      CHECK(RZ)
      A                                  4  4'-----------------------------------
      A                                      ------------------------------------
      A                                      -----'
-     A            OUTNAME       11   O  5  4
+     A            OUTNAME       11A  O  5  4
      A                                  5 18'says...'
-     A            OUTCMT       200   O  7  5
+     A            OUTCMT       200A  O  7  5
      A                                 13  5'Is this comment too obscene? Pleas-
      A                                      e report the Comment ID to the folk-
      A                                      s'
@@ -48,3 +50,32 @@
      A                                       we will address the comment.'
      A                                 24  5'Cmd5 / F5 = Submit  Cmd12 / F12 = -
      A                                      Cancel'
+     A            ERRLINE       20A  O  3 39COLOR(RED)
+     A            INCMTID        4Y 0I  3 25CHECK(ME)
+     A                                      CHECK(RZ)
+     A          R HIDECMT
+     A*%%TS  SD  20230826  153521  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF05(05 'Submit')
+     A                                      CF12(12 'Cancel')
+     A                                  1  4'VINTAGE COMPUTER FESTIVAL'
+     A                                  1 33'GUESTBOOK/400 - Comment Administra-
+     A                                      tor'
+     A                                  3  4'Comment ID:'
+     A                                  4  4'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -----'
+     A            OUTNAME       11A  O  5  4
+     A                                  5 18'says...'
+     A            OUTCMT       200A  O  7  5
+     A                                 24  5'Cmd5 / F5 = Submit  Cmd12 / F12 = -
+     A                                      Cancel'
+     A            ERRLINE       20A  O  3 39COLOR(RED)
+     A            HIDECMTID      4A  O  3 18
+     A                                 14  5'Change Status? (Y/N)    '
+     A            INHIDEYN       1A  I 14 32
+     A                                 11  5'Currently Visible?'
+     A            CURRHIDE       1A  O 11 32
+     A                                 16  5'Y = Comment is visible to all atte-
+     A                                      ndees and exhibitors'
+     A                                 17  5'N = Comment is only visible to SEC-
+     A                                      OFR'

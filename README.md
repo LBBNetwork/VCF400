@@ -16,4 +16,5 @@ To-do List:
 * (RPG) ADDGBCMT: Finish up enforcement of EXHBID parm; do not let user change EXHBID field unless parm 999 (Assume SECOFR) was specified
 * (RPG) ADDVOTE: Mostly complete, finish enforcement of EXHBID parm, do not let user change EXHBID field unless parm 999 (Assume SECOFR) was specified
 * (RPG) ADMSETTING: Not started. Monolithic program to specify application settings, Guestbook/400 comment visibility?
-* (RPG) READGBCMT: Not yet started. Screen is defined. Needs more functionality, need to let users see a list of comments and print them. Enforce EXHBID locking, do not allow an unrelated exhibit to read comments for other exhibits unless you run as 999 (Assume SECOFR). Also needs to obey the VISIBLE field in the guestbook DB; display error message if a comment has been hidden
+* (RPG) READGBCMT: Basics are working. Can read comments from GUESTBKDB and display them to screen. Also respects VISIBLE field in DB and hides comments if an admin disabled that comment from view. I want a scrolling SFL though... also need to disable reading other guest's comments unless you're passing 999 to the launch parm
+

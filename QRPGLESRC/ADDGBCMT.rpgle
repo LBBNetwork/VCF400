@@ -3,6 +3,7 @@
      FGUESTBKSCRCF   E             WORKSTN
      DID               S              4P 0
      DSUCCESS          C                   CONST('Thanks for commenting')
+     DVISYES           C                   CONST('Y')
      DERREXID          C                   CONST('Must enter Exhibit ID')
      DERRNOCMT         C                   Const('Must enter a comment')
      C*-----------------------------------------------
@@ -44,7 +45,7 @@
      C                   MOVEL     INNAME        GUESTNAME
      C                   MOVEL     INEXHBID      EXHBID
      C                   MOVEL     INCMT         GUESTCMT
-     C                   MOVEL     'Y'           VISIBLE
+     C                   MOVEL     VISYES        VISIBLE
      C                   WRITE     GUESTBKRCD
      C                   EXSR      ENDADDGB
      C                   ENDSR
