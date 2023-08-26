@@ -1,93 +1,93 @@
-000010 230816      A*%%TS  SD  20230816  172640  QSECOFR     REL-V4R4M0  5769-PW1             
-000020 230816      A*%%EC                                                                     
-000030 230816      A                                      DSPSIZ(24 80 *DS3)                  
-000040 230816      A          R VOTE1                                                         
-000050 230816      A*%%TS  SD  20230816  172640  QSECOFR     REL-V4R4M0  5769-PW1             
-000060 230816      A                                      CF05(05 'Submit')                   
-000070 230816      A                                      CF12(12 'Cancel')                   
-000080 230816      A                                  1  3'VINTAGE COMPUTER FESTIVAL'         
-000090 230816      A                                  1 34'NOMINATE EXHIBIT FOR AWARD'        
-000100 230816      A                                      COLOR(WHT)                          
-000110 230816      A                                  3  7'First, type your SFGE Badge Number-
-000120 230816      A                                      ...............:'                   
-000130 230816      A            INPUTBADGE     4D 0I  3 58CHECK(RZ)                           
-000140 230816      A                                  4  7'Second, type the Exhibit ID you ar-
-000150 230816      A                                      e nominating...:'                   
-000160 230816      A                                  5  7'Third, type the Award ID you are s-
-000170 230816      A                                      electing.......:'                   
-000180 230816      A            INPUTEXHB      3D 0I  4 58CHECK(RZ)                           
-000190 230816      A            INPUTAWARD     3D 0I  5 58CHECK(RZ)                           
-000200 230816      A                                  9  5'001. Best in Show Award'           
-000210 230816      A                                      COLOR(WHT)                          
-000220 230816      A                                  9 31'- This award is given to the exhib-
-000230 230816      A                                      it who you'                         
-000240 230816      A                                 10 10'believe to be the best in show for-
-000250 230816      A                                       2024.'                             
-000260 230816      A                                 12  5'002. The Ed Fair Award'            
-000270 230816      A                                      COLOR(WHT)                          
-000280 230816      A                                 12 31'- This award is given to the exhib-
-000290 230816      A                                      it that is'                         
-000300 230816      A                                 13 10'deemed the most informative of the-
-000310 230816      A                                       show.'                             
-000320 230816      A                                 14  4'-----------------------------------
-000330 230816      A                                      ------------------------------------
-000340 230816      A                                      -----'                              
-000350 230816      A                                 24  4'Cmd5/F5 = Submit Vote'             
-000360 230816      A                                      COLOR(BLU)                          
-000370 230816      A                                 24 31'Cmd12/F12 = Cancel'                
-000380 230816      A                                      COLOR(BLU)                          
-000390 230816      A            ERRLINE       45A  O  6 14COLOR(RED)                          
-000400 230816      A                                  8  5'Available Awards for This Year:'   
-000410 230816      A                                  7  4'-----------------------------------
-000420 230816      A                                      ------------------------------------
-000430 230816      A                                      -----'                              
-000440 230816      A                                 23 67'V1R0M3'                            
-000450 230816      A                                 15  4'You may only vote for ONE award.'  
-000460 230816      A                                      COLOR(RED)                          
-000470 230816      A                                 15 38'Choose your nomination carefully!' 
-000480 230816      A                                 17  4'ALL FIELDS must be entered. Press -
-000490 230816      A                                      the FIELD EXIT key to move fields.' 
-000500 230816      A                                 21  4'When you are satisfied with your c-
-000510 230816      A                                      hoice, press Cmd5 / F5 to submit!'  
-000520 230816      A                                 19  4'If you receive a blinking error in-
-000530 230816      A                                       the left corner, press RESET.'     
-000540 230816      A          R VOTEEND                                                       
-000550 230816      A*%%TS  SD  20230816  170232  QSECOFR     REL-V4R4M0  5769-PW1             
-000560 230816      A                                  1  4' _____ _   _    _    _   _ _  __ ' 
-000570 230816      A                                  2  4'|_   _| | | |  / \  | \ | | |/ / ' 
-000580 230816      A                                  3  4'  | | | |_| | / _ \ |  \| |   /  ' 
-000590 230816      A                                  4  4'  | | |  _  |/ ___ \| |\  | . \  ' 
-000600 230816      A                                  5  4'  |_| |_| |_/_/   \_\_| \_|_|\_\  '
-000610 230816      A                                  6  4'         __   _____  _   _   _____-
-000620 230816      A                                       ___  ____  '                       
-000630 230816      A                                  7 13'\ \ / / _ \| | | | |  ___/ _ \|  _-
-000640 230816      A                                       \ '                                
-000650 230816      A                                  8 14'\ V / | | | | | | | |_ | | | | |_)-
-000660 230816      A                                       |'                                 
-000670 230816      A                                  9 15'| || |_| | |_| | |  _|| |_| |  _ /-
-000680 230816      A                                        '                                 
-000690 230816      A                                 10 15'|_| \___/ \___/  |_|   \___/|_| \_-
-000700 230816      A                                      \ '                                 
-000710 230816      A                                 11 22' __     _____ _____ ___ _   _  ___-
-000720 230816      A                                      _ _   '                             
-000730 230816      A                                 12 23'\ \   / / _ \_   _|_ _| \ | |/ ___-
-000740 230816      A                                      | | '                               
-000750 230816      A                                 13 23' \ \ / / | | || |  | ||  \| | |  _-
-000760 230816      A                                      | |  '                              
-000770 230816      A                                 14 24' \ V /| |_| || |  | || |\  | |_| |-
-000780 230816      A                                      _|  '                               
-000790 230816      A                                 15 25' \_/  \___/ |_| |___|_| \_|\____(_-
-000800 230816      A                                      )  '                                
-000810 230816      A                                 16  4'-----------------------------------
-000820 230816      A                                      ------------------------------------
-000830 230816      A                                      -----'                              
-000840 230816      A                                 17  4' Your vote has been RECORDED! Than-
-000850 230816      A                                      k you for participating in the awar-
-000860 230816      A                                      ds'                                 
-000870 230816      A                                 18  4' show for Vintage Computer Festiva-
-000880 230816      A                                      l Southeast 2024! Enjoy the rest of-
-000890 230816      A                                       '                                  
-000900 230816      A                                 19  4' our exhibits and the rest of the -
-000910 230816      A                                      Southern Fried Gaming Expo!'        
-000920 230816      A                                 21  4' Press ENTER to return to the main-
-000930 230816      A                                       menu.'                             
+     A*%%TS  SD  20230816  172640  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R VOTE1
+     A*%%TS  SD  20230816  172640  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF05(05 'Submit')
+     A                                      CF12(12 'Cancel')
+     A                                  1  3'VINTAGE COMPUTER FESTIVAL'
+     A                                  1 34'NOMINATE EXHIBIT FOR AWARD'
+     A                                      COLOR(WHT)
+     A                                  3  7'First, type your SFGE Badge Number-
+     A                                      ...............:'
+     A            INPUTBADGE     4D 0I  3 58CHECK(RZ)
+     A                                  4  7'Second, type the Exhibit ID you ar-
+     A                                      e nominating...:'
+     A                                  5  7'Third, type the Award ID you are s-
+     A                                      electing.......:'
+     A            INPUTEXHB      3D 0I  4 58CHECK(RZ)
+     A            INPUTAWARD     3D 0I  5 58CHECK(RZ)
+     A                                  9  5'001. Best in Show Award'
+     A                                      COLOR(WHT)
+     A                                  9 31'- This award is given to the exhib-
+     A                                      it who you'
+     A                                 10 10'believe to be the best in show for-
+     A                                       2024.'
+     A                                 12  5'002. The Ed Fair Award'
+     A                                      COLOR(WHT)
+     A                                 12 31'- This award is given to the exhib-
+     A                                      it that is'
+     A                                 13 10'deemed the most informative of the-
+     A                                       show.'
+     A                                 14  4'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -----'
+     A                                 24  4'Cmd5/F5 = Submit Vote'
+     A                                      COLOR(BLU)
+     A                                 24 31'Cmd12/F12 = Cancel'
+     A                                      COLOR(BLU)
+     A            ERRLINE       45A  O  6 14COLOR(RED)
+     A                                  8  5'Available Awards for This Year:'
+     A                                  7  4'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -----'
+     A                                 23 67'V1R0M3'
+     A                                 15  4'You may only vote for ONE award.'
+     A                                      COLOR(RED)
+     A                                 15 38'Choose your nomination carefully!'
+     A                                 17  4'ALL FIELDS must be entered. Press -
+     A                                      the FIELD EXIT key to move fields.'
+     A                                 21  4'When you are satisfied with your c-
+     A                                      hoice, press Cmd5 / F5 to submit!'
+     A                                 19  4'If you receive a blinking error in-
+     A                                       the left corner, press RESET.'
+     A          R VOTEEND
+     A*%%TS  SD  20230816  170232  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  1  4' _____ _   _    _    _   _ _  __ '
+     A                                  2  4'|_   _| | | |  / \  | \ | | |/ / '
+     A                                  3  4'  | | | |_| | / _ \ |  \| |   /  '
+     A                                  4  4'  | | |  _  |/ ___ \| |\  | . \  '
+     A                                  5  4'  |_| |_| |_/_/   \_\_| \_|_|\_\  '
+     A                                  6  4'         __   _____  _   _   _____-
+     A                                       ___  ____  '
+     A                                  7 13'\ \ / / _ \| | | | |  ___/ _ \|  _-
+     A                                       \ '
+     A                                  8 14'\ V / | | | | | | | |_ | | | | |_)-
+     A                                       |'
+     A                                  9 15'| || |_| | |_| | |  _|| |_| |  _ /-
+     A                                        '
+     A                                 10 15'|_| \___/ \___/  |_|   \___/|_| \_-
+     A                                      \ '
+     A                                 11 22' __     _____ _____ ___ _   _  ___-
+     A                                      _ _   '
+     A                                 12 23'\ \   / / _ \_   _|_ _| \ | |/ ___-
+     A                                      | | '
+     A                                 13 23' \ \ / / | | || |  | ||  \| | |  _-
+     A                                      | |  '
+     A                                 14 24' \ V /| |_| || |  | || |\  | |_| |-
+     A                                      _|  '
+     A                                 15 25' \_/  \___/ |_| |___|_| \_|\____(_-
+     A                                      )  '
+     A                                 16  4'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -----'
+     A                                 17  4' Your vote has been RECORDED! Than-
+     A                                      k you for participating in the awar-
+     A                                      ds'
+     A                                 18  4' show for Vintage Computer Festiva-
+     A                                      l Southeast 2024! Enjoy the rest of-
+     A                                       '
+     A                                 19  4' our exhibits and the rest of the -
+     A                                      Southern Fried Gaming Expo!'
+     A                                 21  4' Press ENTER to return to the main-
+     A                                       menu.'

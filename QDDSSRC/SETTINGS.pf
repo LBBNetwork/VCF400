@@ -1,4 +1,5 @@
-000100 230808                                                                                 
-000200 230820      A          R SETTINGSR                                                     
-000300 230820      A            VARI           9A                                             
-000400 230820      A            VALUE          9A                                             
+     A                                      UNIQUE
+     A          R SETTINGSR
+     A            SETTING        9A
+     A            VALUE          9A
+     A          K SETTING
