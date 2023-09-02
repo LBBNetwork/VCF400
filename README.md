@@ -9,6 +9,7 @@ Source Layout:
 * QMNUSRC:	This library contains the source for all menus
 * QRPGLESRC:	This library contains the RPG IV/ILE source code for all applications
 * QSDASRC:	This library contains the DDS for all RPG screen descriptions
+* QCLSRC:       This library contains the CL source for helper programs (think batch/shell script)
 
 
 To-do List:
@@ -17,4 +18,5 @@ To-do List:
 * (RPG) ADDVOTE: Mostly complete, finish enforcement of EXHBID parm, do not let user change EXHBID field unless parm 999 (Assume SECOFR) was specified
 * (RPG) ADMSETTING: Not started. Monolithic program to specify application settings, Guestbook/400 comment visibility?
 * (RPG) READGBCMT: Basics are working. Can read comments from GUESTBKDB and display them to screen. Also respects VISIBLE field in DB and hides comments if an admin disabled that comment from view. I want a scrolling SFL though... also need to disable reading other guest's comments unless you're passing 999 to the launch parm
-
+* (RPG) EXHBMENU: Actually make the Exhibitor Menu function for launching other programs
+* (CL) VCFSTUB: Not started. Needs to get the executing USRPRF name and pass that as an argument to EXHBMENU.
