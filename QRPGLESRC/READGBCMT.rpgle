@@ -5,7 +5,7 @@
      DERRCMTID         C                   CONST('Must enter CommentID')
      DERRHNAME         C                   CONST('Name Hidden')
      DERRHCMT          C                   CONST('Sorry, this comment has been-
-     D                                             hidden by an admin.')
+     D                                            hidden by an admin.')
      C*-----------------------------------------------
      C     *ENTRY        PLIST
      C                   PARM                    LAUNCH           20

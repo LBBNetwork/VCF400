@@ -3,7 +3,6 @@
      FGUESTBKSCRCF   E             WORKSTN
      DID               S              4P 0
      DSUCCESS          C                   CONST('Thanks for commenting')
-     DVISYES           C                   CONST('Y')
      DERREXID          C                   CONST('Must enter Exhibit ID')
      DERRNOCMT         C                   Const('Must enter a comment')
      C*-----------------------------------------------
@@ -14,7 +13,7 @@
      C                   EXSR      CHKPARM
      C                   EXFMT     ADDCMT
      C*
-     C                   IF        INID     = *BLANK
+     C                   IF        INEXHBID = *BLANK
      C                   EVAL      ERRLINE = ERREXID
      C                   EVAL      *IN05 = *OFF
      C                   ENDIF
@@ -43,16 +42,14 @@
      C                   ADD       1             ID
      C                   MOVEL     ID            CMTID
      C                   MOVEL     INNAME        GUESTNAME
-     C                   MOVEL     INID          EXHBID
+     C                   MOVEL     INEXHBID      EXHBID
      C                   MOVEL     INCMT         GUESTCMT
-     C                   MOVEL     VISYES        VISIBLE
      C                   WRITE     GUESTBKRCD
-     C                   EXFMT     ENDCMT
      C                   EXSR      ENDADDGB
      C                   ENDSR
      C*-------------------------------------------------------
      C     CHKPARM       BEGSR
-     C*                  MOVEL     LAUNCH        DBGPARM
+     C                   MOVEL     LAUNCH        DBGPARM
      C*    LAUNCH        SETLL     EXHBREC                                91
      C*                  READ      EXHBDB
      C*                  MOVEL     DBGEX         EXHBTITLE

@@ -2,7 +2,6 @@
      FEXHBDB    IF   E           K DISK
      FAWARDDB   IF   E           K DISK
      FVOTESCR   CF   E             WORKSTN
-     DUSERPRF          S              9A
      DCHECKOK          S              1P 0
      DSUCCESS          C                   CONST('You have voted successfully')
      DERRBLKBG         C                   CONST('Must enter badge number')
@@ -13,13 +12,7 @@
      DERRPROHB         C                   CONST('Exhibit ineligible for award')
      DERRNOEXB         C                   CONST('Exhibit does not exist')
      DERRNOAWD         C                   CONST('Award does not exist.')
-     DERRDBG1          C                   CONST('DBG: MM2024 parm')
-     DERRDBG2          C                   CONST('DBG: other parm')
      C*-----------------------------------------------
-     C     *ENTRY        PLIST
-     C                   PARM                    LAUNCH            9
-     C*-----------------------------------------------
-     C                   EXSR      CHKPARM
      C                   DOW       *IN05 = *OFF
      C                   EXFMT     VOTE1
      C*
@@ -33,7 +26,7 @@
      C                   EVAL      *IN05 = *OFF
      C                   ENDIF
      C*
-     C                   IF        INEXHB    = *ZERO
+     C                   IF        INPUTEXHB = *ZERO
      C                   EVAL      ERRLINE = ERRBLKEX
      C                   EVAL      *IN05 = *OFF
      C                   ENDIF
@@ -54,7 +47,7 @@
      C                   EVAL      ERRLINE = ERREXIST
      C                   ENDIF
      C                   READ      VOTINGDB                               90
-     C     INEXHB        SETLL     EXHBREC
+     C     INPUTEXHB     SETLL     EXHBREC
      C                   READ      EXHBDB
      C*
      C                   IF        ELIGIBLE = 0
@@ -63,7 +56,7 @@
      C                   ADD       1             CHECKOK
      C                   ENDIF
      C*
-     C     INEXHB        CHAIN     EXHBREC                            93
+     C     INPUTEXHB     CHAIN     EXHBREC                            93
      C                   IF        *IN93 = *OFF
      C                   ADD       1             CHECKOK
      C                   ELSE
@@ -80,22 +73,14 @@
      C                   IF        CHECKOK = 3
      C                   MOVEL     INPUTBADGE    BADGENBR
      C                   MOVEL     INPUTAWARD    AWARDNBR
-     C                   MOVEL     INEXHB        EXHBNBR
+     C                   MOVEL     INPUTEXHB     EXHBNBR
      C                   WRITE     VOTINGREC
      C                   EXSR      ENDVOTE
      C                   ENDIF
      C                   ENDSR
      C*-------------------------------------------------------
      C     CHKPARM       BEGSR
-     C                   MOVEL     LAUNCH        USERPRF
-     C                   IF        USERPRF = 'MM2024'
-     C*TODO: Don't make this IF block hardcoded
-     C*This line left blank. If SECOFR profile passed,
-     C*allow any Exhibit ID to be entered.
-     C                   ELSE
-     C                   MOVEL     USERPRF       INEXHB
-     C                   MOVEL     *ON           *IN70
-     C                   ENDIF
+     C*                  TODO! Validate passed launch parms
      C                   ENDSR
      C*-------------------------------------------------------
      C     ENDVOTE       BEGSR

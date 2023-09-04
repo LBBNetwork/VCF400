@@ -1,10 +1,11 @@
      FGUESTBKDB UF A E           K DISK
      FGUESTBKSCRCF   E             WORKSTN
      DID               S              4P 0
+     DCHECKOK          S              1P 0
      DHIDEY            C                   CONST('Y')
      DHIDEN            C                   CONST('N')
      DERRCMTID         C                   CONST('Must enter CommentID')
-     DERRYN            C                   CONST('Type Y or N')
+     DERRYN            C                   CONST('Must type Y or N')
      DSTSOK            C                   CONST('Status updated')
      C*-----------------------------------------------
      C     *ENTRY        PLIST
@@ -22,7 +23,6 @@
      C*
      C                   ENDDO
      C                   EXSR      HIDECMTSR
-     C                   MOVEL     STSOK         ERRLINE
      C*----------------------------------------------------
      C     READDB        BEGSR
      C                   EVAL      *IN05 = *OFF
@@ -36,17 +36,25 @@
      C*-------------------------------------------------------
      C     HIDECMTSR     BEGSR
      C                   EVAL      *IN05 = *OFF
+     C                   EVAL      CHECKOK = 0
      C*
      C                   IF        INHIDEYN = 'Y'
      C                   MOVEL     HIDEY         VISIBLE
      C                   UPDATE    GUESTBKRCD
+     C                   ADD       1             CHECKOK
+     C                   MOVEL     STSOK         ERRLINE
      C                   ENDIF
      C*
      C                   IF        INHIDEYN = 'N'
      C                   MOVEL     HIDEN         VISIBLE
      C                   UPDATE    GUESTBKRCD
+     C                   ADD       1             CHECKOK
+     C                   MOVEL     STSOK         ERRLINE
      C                   ENDIF
      C*
+     C                   IF        CHECKOK = 0
+     C                   MOVEL     ERRYN         ERRLINE
+     C                   ENDIF
      C                   ENDSR
      C*-------------------------------------------------------
      C     CHKPARM       BEGSR

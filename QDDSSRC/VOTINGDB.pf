@@ -3,5 +3,5 @@
      A          R VOTINGREC
      A            BADGENBR       4B 0
      A            AWARDNBR       3B 0
-     A            EXHBNBR        3B 0
+     A            EXHBNBR        9A
      A          K BADGENBR

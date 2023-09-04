@@ -1,8 +1,8 @@
      A                                      UNIQUE
      A          R GUESTBKRCD
      A            CMTID          4B 0
-     A            EXHBID         3B 0
+     A            VISIBLE        1A
+     A            EXHBID         9A
      A            GUESTNAME     20A
      A            GUESTCMT     200A
-     A            VISIBLE        1A
      A          K CMTID
