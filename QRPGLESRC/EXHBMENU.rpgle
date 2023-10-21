@@ -7,9 +7,30 @@
      C*                  MOVEL     LAUNCH        PARMOUT
      C                   EXSR      CHKPARM
      C                   EXFMT     MENU
+     C
+     C                   IF        INOPT = 1
+     C                   CALL      'VCF/VOTESTUB'
+     C                   ENDIF
+     C
+     C                   IF        INOPT = 2
+     C                   CALL      'ADDGBSTUB'
+     C                   ENDIF
+     C
+     C                   IF        INOPT = 3
+     C                   CALL      'READGBSTUB'
+     C                   ENDIF
+     C
+     C                   IF        INOPT = 7
+     C                   EXSR      ADMKIOSK
+     C                   ENDIF
+     C*------------------------------------------------------------------------
+     C     ADMKIOSK      BEGSR
+     C*******************EXFMT     ADMPSWRD
+     C*******************IF        PSWRD = 'MAGIC'
      C                   MOVEL     *ON           *INLR
      C                   RETURN
-     C*------------------------------------------------------------------------
+     C                   ENDSR
+     C*-------------------------------------------------------------------------
      C     CHKPARM       BEGSR
      C                   MOVEL     LAUNCH        USERPROF
      C     USERPROF      SETLL     EXHBREC

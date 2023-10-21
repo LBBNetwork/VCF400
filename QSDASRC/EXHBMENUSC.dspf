@@ -1,4 +1,4 @@
-     A*%%TS  SD  20230902  145724  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231020  192331  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R MENU
@@ -50,3 +50,10 @@
      A                                 21 33'Exhibit Eligible for Award? Y/N'
      A            INELIGIBLE     1A  I 21 66
      A            INDESC      1000A  I  5  1CHECK(LC)
+     A          R ADMPSWRD
+     A*%%TS  SD  20231020  192331  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  4  5'Are you sure you want to exit the -
+     A                                      kiosk?'
+     A                                  5  5'Type the Administrator password, p-
+     A                                      ress ENTER to sign off'
+     A            FLD001         9   I  7  5
