@@ -14,9 +14,10 @@ Source Layout:
 
 To-do List:
 
-* (RPG) ADDGBCMT: Finish up enforcement of EXHBID parm; do not let user change EXHBID field unless parm 999 (Assume SECOFR) was specified
+* (RPG) ADDGBCMT: EXHBID is now respected on launch!
 * (RPG) ADDVOTE: Now respects passed USRPRF parm at launch!
 * (RPG) ADMSETTING: Not started. Monolithic program to specify application settings, Guestbook/400 comment visibility?
-* (RPG) READGBCMT: Basics are working. Can read comments from GUESTBKDB and display them to screen. Also respects VISIBLE field in DB and hides comments if an admin disabled that comment from view. I want a scrolling SFL though... also need to disable reading other guest's comments unless you're passing 999 to the launch parm
-* (RPG) EXHBMENU: Actually make the Exhibitor Menu function for launching other programs
+* (RPG) READGBCMT: Basics are working. Can read comments from GUESTBKDB and display them to screen. Also respects VISIBLE field in DB and hides comments if an admin disabled that comment from view. If not launched as SECOFR USRPRF, comments are private. Still want that scrolling SFL though.
+* (RPG) EXHBMENU: Now launches other programs. Add kiosk escape hatch password and fix up some screen layout bugs next.
+* (RPG) PRINTER: Actually learn how to make printer files work and print stuff. This will be important to the voting and guestbook systems.
 * (CL) STUBs: Completed. Probably shouldn't change unless I do something wild.
