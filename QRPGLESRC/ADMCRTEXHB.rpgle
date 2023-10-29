@@ -1,66 +1,169 @@
-000100 231024      FSECOFRS   IF   E           K DISK                                         
-000200 230902      FEXHBDB    UF A E           K DISK                                         
-000300 230902      FEXHBMENUSCCF   E             WORKSTN                                      
-000301 231026      DNEWOREDT         S              1P 0                                      
-000400 230902      DUSERPROF         S              9A                                        
-000500 231024      DEDTEXHB          S              9A                                        
-000600 231026      DDBGTST           C                   CONST('1234567890')                  
-000700 231024      C*---------------------------------------------------------------------    
-000800 230820      C     *ENTRY        PLIST                                                  
-000900 230902      C                   PARM                    LAUNCH            9            
-001000 231024      C                   PARM                    EXHIBIT           9            
-001100 230902      C*-----------------------------------------------------------------------  
-001101 231026      C                   MOVEL     0             NEWOREDT                       
-001200 231024      C                   EXSR      CHKPARM                                      
-001300 231026      C                   EXSR      LOADEXHB                                     
-001400 230902      C                   EXFMT     ADMCREATE                                    
-001401 231026      C                   EXSR      WRITEEXHB                                    
-002800 230820      C                   MOVEL     *ON           *INLR                          
-002900 230820      C                   RETURN                                                 
-003000 231024      C*---------------------------------------------------------------------    
-003100 231024      C     LOADEXHB      BEGSR                                                  
-003200 231024      C                   IF        EDTEXHB = 'NONE'                             
-003300 231026      C*                    *Do nothing. Assume new (NEWOREDT = 0)               
-003400 231024      C                   ELSE                                                   
-003500 231024      C*                    *Scan the EXHBDB for a match and load in|            
-003501 231026      C                   ADD       1             NEWOREDT                       
-003600 231026      C     EDTEXHB       SETLL     EXHBREC                                      
-003700 231026      C                   READ      EXHBDB                                       
-003800 231026      C                   MOVEL     EXHBTITLE     INTITLE                        
-003900 231026      C                   MOVEL     EXHBITOR      INNAME                         
-004000 231026      C                   MOVEL     EXHBCITY      INCITY                         
-004100 231026      C                   MOVEL     EXHBSTATE     INSTATE                        
-004200 231026      C                   MOVEL     EXHBDESC      INDESC                         
-004300 231026      C                   MOVEL     ELIGIBLE      INELIGIBLE                     
-004400 231026      C                   MOVEL     EXHUSRPRF     INUSRPRF                       
-004500 231026      C                   MOVEL     EXHBDBID      INEXHBID                       
-004600 231024      C                   ENDIF                                                  
-004700 231024      C                   ENDSR                                                  
-004701 231026      C*---------------------------------------------------------------------    
-004702 231026      C     WRITEEXHB     BEGSR                                                  
-004703 231026      C     EDTEXHB       SETLL     EXHBREC                                      
-004704 231026      C                   READ      EXHBDB                                       
-004705 231026      C                   MOVEL     INTITLE       EXHBTITLE                      
-004706 231026      C                   MOVEL     INNAME        EXHBITOR                       
-004707 231026      C                   MOVEL     INCITY        EXHBCITY                       
-004708 231026      C                   MOVEL     INSTATE       EXHBSTATE                      
-004709 231026      C                   MOVEL     INDESC        EXHBDESC                       
-004710 231026      C                   MOVEL     INELIGIBLE    ELIGIBLE                       
-004711 231026      C                   MOVEL     INUSRPRF      EXHUSRPRF                      
-004712 231026      C                   MOVEL     INEXHBID      EXHBDBID                       
-004713 231026      C                   IF        NEWOREDT = 0                                 
-004714 231026      C                   WRITE     EXHBREC                                      
-004715 231026      C                   ELSE                                                   
-004716 231026      C                   UPDATE    EXHBREC                                      
-004717 231026      C                   ENDIF                                                  
-004718 231026      C                   ENDSR                                                  
-004800 231024      C*---------------------------------------------------------------------    
-004900 231024      C     CHKOFRS       BEGSR                                                  
-005000 231024      C                   ENDSR                                                  
-005100 230902      C*------------------------------------------------------------------------ 
-005200 230902      C     CHKPARM       BEGSR                                                  
-005300 231024      C                   MOVEL     LAUNCH        USERPROF                       
-005400 231024      C                   MOVEL     EXHIBIT       EDTEXHB                        
-005500 231024      C*TODO HERE: Logic to do the stuff to validate user is                     
-005600 231024      C*a SECOFR in the SECOFRS file                                             
-005700 230902      C                   ENDSR                                                  
+     FSECOFRS   IF   E           K DISK
+     FEXHBDB    UF A E           K DISK
+     FEXHBMENUSCCF   E             WORKSTN
+     DNEWOREDT         S              1P 0
+     DALWEXIT          S              1P 0
+     DERRSTS           S              1P 0
+     DDLTACTIV         S              1P 0
+     DUSERPROF         S              9A
+     DEDTEXHB          S              9A
+     DEMPTY            C                   CONST('          ')
+     DERREXIST         C                   CONST('Error - USRPRF exists')
+     DERRNF            C                   CONST('USRPRF not found, creating +
+     D                                            new')
+     DERRNODEL         C                   CONST('Not found - not deleted')
+     DERRDELOK         C                   CONST('USRPRF was deleted from DB')
+     DERRBLANK         C                   CONST('USRPRF cannot be blank     ')
+     C*---------------------------------------------------------------------
+     C     *ENTRY        PLIST
+     C                   PARM                    LAUNCH            9
+     C                   PARM                    EXHIBIT           9
+     C*-----------------------------------------------------------------------
+     C                   MOVEL     0             NEWOREDT
+     C                   MOVEL     0             ERRSTS
+     C                   MOVEL     0             DLTACTIV
+     C
+     C                   EXSR      CHKPARM
+     C                   EXSR      LOADEXHB
+     C
+     C                   DOW       ALWEXIT = *ZERO
+     C                   MOVEL     0             DLTACTIV
+     C                   EXFMT     ADMCREATE
+     C
+     C                   IF        ERRSTS = 1
+     C                   EVAL      ERRLINE = ERREXIST
+     C                   ENDIF
+     C
+     C                   IF        ERRSTS = 2
+     C                   EVAL      ERRLINE = ERRNF
+     C                   ENDIF
+     C
+     C                   IF        ERRSTS = 3
+     C                   EVAL      ERRLINE = ERRNODEL
+     C                   ENDIF
+     C
+     C                   IF        ERRSTS = 4
+     C                   EVAL      ERRLINE = ERRDELOK
+     C                   ENDIF
+     C
+     C                   IF        ERRSTS = 5
+     C                   EVAL      ERRLINE = ERRBLANK
+     C                   ENDIF
+     C
+     C                   IF        *IN05 = *ON
+     C                   EXSR      DELRCD
+     C                   EVAL      *IN05 = *OFF
+     C                   MOVEL     1             DLTACTIV
+     C                   ENDIF
+     C
+     C                   IF        *IN12 = *ON
+     C                   MOVEL     *ON           *INLR
+     C                   RETURN
+     C                   ENDIF
+     C
+     C                   IF        DLTACTIV  = *ZERO
+     C                   EXSR      WRITEEXHB
+     C                   ENDIF
+     C                   ENDDO
+     C
+     C                   MOVEL     *ON           *INLR
+     C                   RETURN
+     C*---------------------------------------------------------------------
+     C     LOADEXHB      BEGSR
+     C                   IF        EDTEXHB = 'NONE'
+     C*                    *Do nothing. Assume new (NEWOREDT = 0)
+     C                   ELSE
+     C     EDTEXHB       CHAIN     EXHBREC                            95
+     C                   IF        *IN95 = *OFF
+     C                   READE     EXHBDB
+     C                   MOVEL     EXHBTITLE     INTITLE
+     C                   MOVEL     EXHBITOR      INNAME
+     C                   MOVEL     EXHBCITY      INCITY
+     C                   MOVEL     EXHBSTATE     INSTATE
+     C                   MOVEL     EXHBDESC      INDESC
+     C                   MOVEL     ELIGIBLE      INELIGIBLE
+     C                   MOVEL     EXHUSRPRF     INUSRPRF
+     C                   MOVEL     EXHBDBID      INEXHBID
+     C                   MOVEL     1             NEWOREDT
+     C                   ELSE
+     C                   MOVEL     EDTEXHB       INUSRPRF
+     C                   MOVEL     2             ERRSTS
+     C                   MOVEL     0             NEWOREDT
+     C                   EVAL      ERRLINE = ERRNF
+     C                   ENDIF
+     C                   ENDIF
+     C                   ENDSR
+     C*---------------------------------------------------------------------
+     C     WRITEEXHB     BEGSR
+     C                   IF        INUSRPRF = *BLANK
+     C                   MOVEL     5             ERRSTS
+     C                   EVAL      ERRLINE = ERRBLANK
+     C                   LEAVESR
+     C                   ENDIF
+     C
+     C     EDTEXHB       SETLL     EXHBREC
+     C                   READ      EXHBDB
+     C                   MOVEL     INTITLE       EXHBTITLE
+     C                   MOVEL     INNAME        EXHBITOR
+     C                   MOVEL     INCITY        EXHBCITY
+     C                   MOVEL     INSTATE       EXHBSTATE
+     C                   MOVEL     INDESC        EXHBDESC
+     C                   MOVEL     INELIGIBLE    ELIGIBLE
+     C                   MOVEL     INUSRPRF      EXHUSRPRF
+     C                   MOVEL     INEXHBID      EXHBDBID
+     C                   IF        NEWOREDT = 0
+     C     INUSRPRF      CHAIN     EXHBREC                            96
+     C                   IF        *IN96 = *OFF
+     C                   MOVEL     1             ERRSTS
+     C                   EVAL      ERRLINE = ERREXIST
+     C                   ELSE
+     C                   WRITE     EXHBREC
+     C                   MOVEL     1             ALWEXIT
+     C                   ENDIF
+     C                   ELSE
+     C                   UPDATE    EXHBREC
+     C                   MOVEL     1             ALWEXIT
+     C                   ENDIF
+     C                   ENDSR
+     C*------------------------------------------------------------------------
+     C     DELRCD        BEGSR
+     C                   IF        INUSRPRF = *BLANK
+     C                   MOVEL     5             ERRSTS
+     C                   EVAL      ERRLINE = ERRBLANK
+     C                   LEAVESR
+     C                   ENDIF
+     C
+     C     INUSRPRF      CHAIN     EXHBREC                            97
+     C                   IF        *IN97 = *OFF
+     C                   EVAL      DLTEXHNAM = INUSRPRF
+     C                   EXFMT     ADMDELETE
+     C
+     C*                  MOVEL     INUSRPRF      DLTEXHBNAM
+     C
+     C                   IF        *IN12 = *ON
+     C                   EVAL      *IN12 = *OFF
+     C                   LEAVESR
+     C                   ENDIF
+     C
+     C                   DELETE    EXHBREC
+     C                   MOVEL     4             ERRSTS
+     C                   EVAL      ERRLINE = ERRDELOK
+     C                   EVAL      INUSRPRF = EMPTY
+     C
+     C                   ELSE
+     C                   MOVEL     3             ERRSTS
+     C                   EVAL      ERRLINE = ERRNODEL
+     C                   LEAVESR
+     C                   ENDIF
+     C
+     C                   ENDSR
+     C*---------------------------------------------------------------------
+     C     CHKOFRS       BEGSR
+     C                   ENDSR
+     C*------------------------------------------------------------------------
+     C     CHKPARM       BEGSR
+     C                   MOVEL     LAUNCH        USERPROF
+     C                   MOVEL     EXHIBIT       EDTEXHB
+     C*TODO HERE: Logic to do the stuff to validate user is
+     C*a SECOFR in the SECOFRS file
+     C                   ENDSR

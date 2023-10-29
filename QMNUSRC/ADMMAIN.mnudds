@@ -1,0 +1,38 @@
+     A* Free Form Menu: ADMMAIN
+     A*%%TS  SD  20231028  184947  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3                  -
+     A                                             27 132 *DS4)
+     A                                      CHGINPDFT
+     A                                      INDARA
+     A                                      PRINT(*LIBL/QSYSPRT)
+     A          R ADMMAIN
+     A*%%TS  SD  20231028  184947  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      DSPMOD(*DS3)
+     A                                      LOCK
+     A                                      SLNO(01)
+     A                                      CLRL(*ALL)
+     A                                      ALWROL
+     A                                      CF03
+     A                                      HELP
+     A                                      HOME
+     A                                      HLPRTN
+     A                                  1  2'ADMMAIN'
+     A                                      COLOR(BLU)
+     A                                  1 33'VCF/400 - Admin Menu'
+     A                                      DSPATR(HI)
+     A                                  3  2'Select one of the following:'
+     A                                      COLOR(BLU)
+     A                                  5  7'1. Create New Exhibit'
+     A                                  6  7'2. Edit Existing Exhibit'
+     A                                  7  7'3. Moderate Comment'
+     A                                  8  7'4. End All Voting'
+     A                                  9  7'5. View Voting Statistics'
+     A                                 10  7'6.'
+     A                                 11  7'7.'
+     A                                 12  7'8.'
+     A                                 13  7'9.'
+     A                                 14  6'10.'
+     A* CMDPROMPT  Do not delete this DDS spec.
+     A                                019  2'Selection or command              -
+     A                                          '
