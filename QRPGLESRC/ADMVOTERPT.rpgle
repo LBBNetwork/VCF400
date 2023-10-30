@@ -2,11 +2,13 @@
      FVOTINGDB  IF   E           K DISK
      FEXHBDB    IF   E           K DISK
      FADMVOTERESCF   E             WORKSTN
+     DALWEXIT          S              1P 0
      DNUMBR            S              4P 0
      DVOTEEFA          S              4P 0
      DVOTEBIS          S              4P 0
      DUSERPROF         S              9A
      DERRBLANK         C                   CONST('USRPRF cannot be blank     ')
+     DERRNOTF          C                   CONST('USRPRF was not found       ')
      DDBGNAME          C                   CONST('NL2024')
       *---------------------------------------------------------------------
       * AWARDNBR:
@@ -18,10 +20,35 @@
      C                   PARM                    LAUNCH            9
      C*-----------------------------------------------------------------------
      C                   EXSR      CHKPARM
-     C*                  EXFMT     VOTERES
+     C                   MOVEL     0             ALWEXIT
      C
-     C     *LOVAL        SETLL     VOTINGREC
-     C                   READ      VOTINGREC                            90
+     C                   IF        USERPROF = 'NONE'
+     C
+     C                   ELSE
+     C                   EXSR      READVOTE
+     C                   ENDIF
+     C
+     C                   DOW       ALWEXIT = *ZERO
+     C                   EXFMT     VOTERES
+     C
+     C                   IF        *IN03 = *ON
+     C                   MOVEL     1             ALWEXIT
+     C                   ENDIF
+     C
+     C                   MOVEL     INUSRPRF      USERPROF
+     C                   EXSR      READVOTE
+     C                   ENDDO
+     C
+     C                   MOVEL     *ON           *INLR
+     C                   RETURN
+     C*-----------------------------------------------------------------------
+     C     READVOTE      BEGSR
+     C                   RESET                   VOTEEFA
+     C                   RESET                   VOTEBIS
+     C                   RESET                   NUMBR
+     C
+     C     *LOVAL        SETLL     VOTINGREC                          90
+     C                   READ      VOTINGREC
      C
      C                   DOU       %EOF(VOTINGDB)
      C
@@ -40,14 +67,22 @@
      C
      C                   ENDDO
      C
-     C                   MOVEL     NUMBR         ERRLINE
+     C     USERPROF      CHAIN     EXHBREC                            91
+     C                   IF        *IN91 = *OFF
+     C                   READE     EXHBDB
+     C                   MOVEL     EXHBTITLE     OUTTITLE
+     C                   ELSE
+     C                   EVAL      OUTTITLE = ERRNOTF
+     C                   ENDIF
+     C
+     C                   MOVEL     NUMBR         OUTVOTEN
      C                   MOVEL     VOTEEFA       OUTEFA
      C                   MOVEL     VOTEBIS       OUTBIS
+     C                   MOVEL     USERPROF      INUSRPRF
+     C*                  MOVEL     EXHBTITLE     OUTTITLE
      C
-     C                   EXFMT     VOTERES
-     C                   MOVEL     *ON           *INLR
-     C                   RETURN
-     C*---------------------------------------------------------------------
+     C                   ENDSR
+     C*------------------------------------------------------------------------
      C     CHKOFRS       BEGSR
      C                   ENDSR
      C*------------------------------------------------------------------------
