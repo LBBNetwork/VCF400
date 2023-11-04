@@ -1,14 +1,20 @@
-     FQPRINT    O    F  132        PRINTER OFLIND(*IN90)
+     FGUESTBKDB IF   E           K DISK
+     FTESTPRT2  O    E             PRINTER OFLIND(*IN01)
+     DID               S              4P 0
      C     *ENTRY        PLIST
-     C                   PARM                    LAUNCH           20
+     C                   PARM                    LAUNCH            4
      C
-     C                   EXCEPT    TESTPRT
-     C                   MOVEL     LAUNCH        PARMOUT
+     C                   MOVEL     LAUNCH        ID
+     C
+     C
+     C                   WRITE     RCD001
+     C
+     C     ID            SETLL     GUESTBKDB
+     C                   READ      GUESTBKDB
+     C
+     C                   WRITE     RCD002
+     C                   WRITE     RCD003
+     C                   WRITE     CMTDETAIL
+     C
      C                   MOVEL     *ON           *INLR
      C                   RETURN
-i    C*----------------------------------------------------------------------
-     OQPRINT    E            TESTPRT
-     O*GO STUDY THIS SOME MORE... THINK I NEED TO BUILD A TEST PHYS FILE
-     O*TO TEST THE PRINTER PROGRAM WITH. NOT SURE I CAN MOVEL
-     O*ANY RANDOM STRING INTO THE PRINTER OUTPUT SPEC?
-     O*https://www.go4as400.com/as400-printer-files/rpgle.aspx?cid=461
