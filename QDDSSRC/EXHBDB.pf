@@ -6,6 +6,6 @@
      A            EXHBCITY      20A
      A            EXHBSTATE      2A
      A            EXHBTITLE     50A
-     A            EXHBDESC     500A
+     A            EXHBDESC    1000A
      A            ELIGIBLE       1B 0
      A          K EXHUSRPRF

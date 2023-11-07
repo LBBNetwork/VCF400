@@ -1,84 +1,89 @@
-000010 231028      A*%%TS  SD  20231028  213518  QSECOFR     REL-V4R4M0  5769-PW1             
-000020 231028      A*%%EC                                                                     
-000030 231028      A                                      DSPSIZ(24 80 *DS3)                  
-000040 230902      A          R MENU                                                          
-000050 230902      A*%%TS  SD  20230902  123633  QSECOFR     REL-V4R4M0  5769-PW1             
-000060 230902      A                                 19  3'-----------------------------------
-000070 230902      A                                      ------------------------------------
-000080 230902      A                                      -------'                            
-000090 230902      A                                 20  4'1. Nominate This Exhibit for Award'
-000100 230902      A                                 21  4'2. Sign Exhibit Guestbook'         
-000110 230902      A                                 22  4'3. Read Exhibit Guestbook'         
-000120 230902      A                                 23 33'Select Menu Option, Press ENTER:'  
-000130 230902      A                                  1  3'WELCOME TO...'                     
-000140 230902      A            OUTTITLE      75   O  2  6                                    
-000150 230902      A                                  3  3'HOSTED'                            
-000160 230902      A                                  3 10'BY'                                
-000170 230902      A            OUTNAME       25   O  3 13                                    
-000180 230902      A                                  3 39'OF'                                
-000190 230902      A            OUTCITY       15   O  3 42                                    
-000200 230902      A            OUTSTATE       2   O  3 58                                    
-000210 230902      A                                  4  3'-----------------------------------
-000220 230902      A                                      ------------------------------------
-000230 230902      A                                      -------'                            
-000240 230902      A            OUTDESC     1000   O  5  2                                    
-000250 230902      A            INOPT          1Y 0I 23 67CHECK(ME)                           
-000260 230902      A                                      CHECK(MF)                           
-000270 231028      A          R ADMCREATE                                                     
-000280 231028      A*%%TS  SD  20231028  201319  QSECOFR     REL-V4R4M0  5769-PW1             
-000290 231028      A                                      CF05(05 'Delete')                   
-000300 231028      A                                      CF12(12 'Cancel')                   
-000310 231028      A                                 19  3'-----------------------------------
-000320 231028      A                                      ------------------------------------
-000330 231028      A                                      -------'                            
-000340 231028      A                                 20  4'1. Nominate This Exhibit for Award'
-000350 231028      A                                 21  4'2. Sign Exhibit Guestbook'         
-000360 231028      A                                 22  4'3. Read Exhibit Guestbook'         
-000370 231028      A                                 23 33'Type Exhibit ID:'                  
-000380 231028      A                                  1  3'WELCOME TO...'                     
-000390 231028      A                                  3  3'HOSTED'                            
-000400 231028      A                                  3 10'BY'                                
-000410 231028      A                                  3 39'OF'                                
-000420 231028      A                                  4  3'-----------------------------------
-000430 231028      A                                      ------------------------------------
-000440 231028      A                                      -------'                            
-000450 231028      A                                 22 33'Type Associated USRPRF:'           
-000460 231028      A            INUSRPRF       9A  B 22 66                                    
-000470 231028      A            INEXHBID       3Y 0I 23 66                                    
-000480 231028      A            INTITLE       60A  B  2  7CHECK(LC)                           
-000490 231028      A            INNAME        20A  B  3 13CHECK(LC)                           
-000500 231028      A            INCITY        15A  B  3 42CHECK(LC)                           
-000510 231028      A            INSTATE        2A  B  3 58                                    
-000520 231028      A                                 21 33'Award Eligible? (0 No / 1 Yes)'    
-000530 231028      A            INELIGIBLE     1A  B 21 66                                    
-000540 231028      A            INDESC      1000A  B  5  1CHECK(LC)                           
-000550 231028      A            ERRLINE       30A  O 18  3                                    
-000560 231028      A                                 24  5'ENTER = Save  F5 = Delete  F12 = C-
-000570 231028      A                                      ancel'                              
-000580 231020      A          R ADMPSWRD                                                      
-000590 231020      A*%%TS  SD  20231020  192331  QSECOFR     REL-V4R4M0  5769-PW1             
-000600 231020      A                                  4  5'Are you sure you want to exit the -
-000610 231020      A                                      kiosk?'                             
-000620 231020      A                                  5  5'Type the Administrator password, p-
-000630 231020      A                                      ress ENTER to sign off'             
-000640 231020      A            FLD001         9   I  7  5                                    
-000650 231028      A          R ADMDELETE                                                     
-000660 231028      A*%%TS  SD  20231028  213249  QSECOFR     REL-V4R4M0  5769-PW1             
-000670 231028      A                                      CF12(12 'Cancel')                   
-000680 231028      A                                  4  5'Are you sure you want to delete th-
-000690 231028      A                                      is exhibit?'                        
-000700 231028      A                                  5  5'This change is PERMANENT and CANNO-
-000710 231028      A                                      T BE UNDONE.'                       
-000720 231028      A                                 10  5'Press ENTER to delete.'            
-000730 231028      A                                 12  5'Press F12 to cancel.'              
-000740 231028      A            DLTEXHNAM      9A  O  7  5                                    
-000750 231028      A          R ADMDELETE2                                                    
-000760 231028      A*%%TS  SD  20231028  213518  QSECOFR     REL-V4R4M0  5769-PW1             
-000770 231028      A                                      CF12(12 'Cancel')                   
-000780 231028      A                                  4  5'Are you sure you want to delete th-
-000790 231028      A                                      is exhibit?'                        
-000800 231028      A                                  5  5'This change is PERMANENT and CANNO-
-000810 231028      A                                      T BE UNDONE.'                       
-000820 231028      A                                 10  5'Press ENTER to delete.'            
-000830 231028      A                                 12  5'Press F12 to cancel.'              
-000840 231028      A            DLTEXHNAM      9A  O  7  5                                    
+     A*%%TS  SD  20231106  192843  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R MENU
+     A*%%TS  SD  20231106  192843  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                 19  3'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -------'
+     A                                 20  4'1. Nominate This Exhibit for Award'
+     A                                      COLOR(BLU)
+     A                                 21  4'2. Sign Exhibit Guestbook'
+     A                                      COLOR(BLU)
+     A                                 22  4'3. Read Exhibit Guestbook'
+     A                                      COLOR(BLU)
+     A                                 23 44'Select Menu Option, Press ENTER:'
+     A                                      COLOR(BLU)
+     A                                  1  3'WELCOME TO...'
+     A            OUTTITLE      75   O  2  6COLOR(WHT)
+     A                                  3  3'HOSTED'
+     A                                  3 10'BY'
+     A            OUTNAME       25   O  3 13COLOR(WHT)
+     A                                  3 39'OF'
+     A            OUTCITY       15   O  3 42COLOR(WHT)
+     A            OUTSTATE       2   O  3 58COLOR(WHT)
+     A                                  4  3'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -------'
+     A            OUTDESC     1000   O  5  2COLOR(WHT)
+     A            INOPT          1Y 0I 23 78CHECK(ME)
+     A                                      CHECK(MF)
+     A                                      COLOR(BLU)
+     A          R ADMCREATE
+     A*%%TS  SD  20231028  201319  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF05(05 'Delete')
+     A                                      CF12(12 'Cancel')
+     A                                 19  3'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -------'
+     A                                 20  4'1. Nominate This Exhibit for Award'
+     A                                 21  4'2. Sign Exhibit Guestbook'
+     A                                 22  4'3. Read Exhibit Guestbook'
+     A                                 23 33'Type Exhibit ID:'
+     A                                  1  3'WELCOME TO...'
+     A                                  3  3'HOSTED'
+     A                                  3 10'BY'
+     A                                  3 39'OF'
+     A                                  4  3'-----------------------------------
+     A                                      ------------------------------------
+     A                                      -------'
+     A                                 22 33'Type Associated USRPRF:'
+     A            INUSRPRF       9A  B 22 66
+     A            INEXHBID       3Y 0I 23 66
+     A            INTITLE       60A  B  2  7CHECK(LC)
+     A            INNAME        20A  B  3 13CHECK(LC)
+     A            INCITY        15A  B  3 42CHECK(LC)
+     A            INSTATE        2A  B  3 58
+     A                                 21 33'Award Eligible? (0 No / 1 Yes)'
+     A            INELIGIBLE     1A  B 21 66
+     A            INDESC      1000A  B  5  1CHECK(LC)
+     A            ERRLINE       30A  O 18  3
+     A                                 24  5'ENTER = Save  F5 = Delete  F12 = C-
+     A                                      ancel'
+     A          R ADMPSWRD
+     A*%%TS  SD  20231020  192331  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  4  5'Are you sure you want to exit the -
+     A                                      kiosk?'
+     A                                  5  5'Type the Administrator password, p-
+     A                                      ress ENTER to sign off'
+     A            FLD001         9   I  7  5
+     A          R ADMDELETE
+     A*%%TS  SD  20231028  213249  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF12(12 'Cancel')
+     A                                  4  5'Are you sure you want to delete th-
+     A                                      is exhibit?'
+     A                                  5  5'This change is PERMANENT and CANNO-
+     A                                      T BE UNDONE.'
+     A                                 10  5'Press ENTER to delete.'
+     A                                 12  5'Press F12 to cancel.'
+     A            DLTEXHNAM      9A  O  7  5
+     A          R ADMDELETE2
+     A*%%TS  SD  20231028  213518  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF12(12 'Cancel')
+     A                                  4  5'Are you sure you want to delete th-
+     A                                      is exhibit?'
+     A                                  5  5'This change is PERMANENT and CANNO-
+     A                                      T BE UNDONE.'
+     A                                 10  5'Press ENTER to delete.'
+     A                                 12  5'Press F12 to cancel.'
+     A            DLTEXHNAM      9A  O  7  5
