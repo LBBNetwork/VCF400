@@ -1,0 +1,18 @@
+LEARN/400 Page Programming Guide
+
+For the most part, LEARN/400 is a straightforward application. 
+You start ADMLRN400 with your SECOFR parameter and you can immediately begin editing
+each page of the file. The editor is effectively WYSIWYG, where the main ~1,000 character
+screen can be laid out however you wish (barring reserved characters in OS/400 DBs), but
+there are some special considerations.
+
+To assist with page automation, the following keywords are reserved by LEARN/400's main data field,
+and one optional parameter is allowed in the EXTRA field. The valid keywords are: 
+
+JUMP: Jump to the PAGENBR specified in EXTRA, leading zero required.
+CALL: Call the program specified in EXTRA.
+
+Additionally, the main data field can be augmented with the following keywords in EXTRA for
+further functionality:
+
+END: Tells LEARN/400 that pressing the Page Forward key should end the program.
