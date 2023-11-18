@@ -1,4 +1,4 @@
-     A*%%TS  SD  20231116  225034  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231118  135705  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R MAIN
@@ -21,7 +21,7 @@
      A                                      COLOR(BLU)
      A            OUTCONTENT  1500A  O  3  1COLOR(WHT)
      A          R MAINADMIN
-     A*%%TS  SD  20231116  212209  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231118  135705  QSECOFR     REL-V4R4M0  5769-PW1
      A                                      CF05(05 'Fwd')
      A                                      CF08(08 'Back')
      A                                      CF03(03 'Exit')
@@ -42,7 +42,7 @@
      A                                      COLOR(WHT)
      A                                 23 63'EXTRA:'
      A                                      COLOR(BLU)
-     A            INEXTRA        9A  I 23 71COLOR(BLU)
      A                                  1 65'NEW'
      A                                      DSPATR(RI)
      A  60                                  DSPATR(ND)
+     A            INEXTRA        9   B 23 70COLOR(BLU)
