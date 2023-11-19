@@ -3,6 +3,8 @@
 
  Licensed under the Pirate License, see LICENSE.TXT for more details
 
+ Beta 1 now out! See /SAVF for files
+
 Source Layout:
 
 * QDDSSRC: 	This library contains the data description spec for the voting database, guestbook database, LEARN/400 strings, and misc settings
@@ -14,12 +16,11 @@ Source Layout:
 * QCLSRC:       This library contains the CL source for helper programs (think batch/shell script)
 
 
-To-do List:
-
-* (RPG) ADDGBCMT: EXHBID is now respected on launch!
-* (RPG) ADDVOTE: Now respects passed USRPRF parm at launch!
-* (RPG) ADMSETTING: Not started. Monolithic program to specify application settings, Guestbook/400 comment visibility?
-* (RPG) READGBCMT: Basics are working. Can read comments from GUESTBKDB and display them to screen. Also respects VISIBLE field in DB and hides comments if an admin disabled that comment from view. If not launched as SECOFR USRPRF, comments are private. Still want that scrolling SFL though.
-* (RPG) EXHBMENU: Now launches other programs. Add kiosk escape hatch password and fix up some screen layout bugs next.
-* (RPG) PRINTER: Actually learn how to make printer files work and print stuff. This will be important to the voting and guestbook systems.
-* (CL) STUBs: Completed. Probably shouldn't change unless I do something wild.
+Beta 2 TODO List:
+* Create admin tool for setting passwords
+* Create admin tool for setting VCF security officers (SECOFRS PF)
+* Enforce password logout in EXHBMENU, SECOFR login on all admin tools
+* Add password stubs to "Sign Off" and "Admin Tools" on menu VCFMAIN
+* Create CL stub for ADMCRTEXHB so you don't have to manually type CALL ADMCRTEXHB PARM... all the time
+* Update EXHBMENU to show 4th menu option - "Tour This Exhibit" controlled by flag in EXHBDB
+* Update EXHBDB to add field for LEARN/400 support
