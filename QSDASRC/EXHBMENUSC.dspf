@@ -1,36 +1,39 @@
-     A*%%TS  SD  20231106  192843  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231205  185250  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R MENU
-     A*%%TS  SD  20231106  192843  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231205  185250  QSECOFR     REL-V4R4M0  5769-PW1
      A                                 19  3'-----------------------------------
      A                                      ------------------------------------
      A                                      -------'
      A                                 20  4'1. Nominate This Exhibit for Award'
      A                                      COLOR(BLU)
-     A                                 21  4'2. Sign Exhibit Guestbook'
+     A                                 21  4'2. Learn More About This Exhibit'
      A                                      COLOR(BLU)
-     A                                 22  4'3. Read Exhibit Guestbook'
+     A  40                                  DSPATR(ND)
+     A                                 22  4'3. Sign Exhibit Guestbook'
      A                                      COLOR(BLU)
      A                                 23 44'Select Menu Option, Press ENTER:'
      A                                      COLOR(BLU)
      A                                  1  3'WELCOME TO...'
-     A            OUTTITLE      75   O  2  6COLOR(WHT)
+     A            OUTTITLE      75A  O  2  6COLOR(WHT)
      A                                  3  3'HOSTED'
      A                                  3 10'BY'
-     A            OUTNAME       25   O  3 13COLOR(WHT)
+     A            OUTNAME       25A  O  3 13COLOR(WHT)
      A                                  3 39'OF'
-     A            OUTCITY       15   O  3 42COLOR(WHT)
-     A            OUTSTATE       2   O  3 58COLOR(WHT)
+     A            OUTCITY       15A  O  3 42COLOR(WHT)
+     A            OUTSTATE       2A  O  3 58COLOR(WHT)
      A                                  4  3'-----------------------------------
      A                                      ------------------------------------
      A                                      -------'
-     A            OUTDESC     1000   O  5  2COLOR(WHT)
+     A            OUTDESC     1000A  O  5  2COLOR(WHT)
      A            INOPT          1Y 0I 23 78CHECK(ME)
      A                                      CHECK(MF)
      A                                      COLOR(BLU)
+     A                                 23  4'4. Read Exhibit Guestbook'
+     A                                      COLOR(BLU)
      A          R ADMCREATE
-     A*%%TS  SD  20231028  201319  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231205  185250  QSECOFR     REL-V4R4M0  5769-PW1
      A                                      CF05(05 'Delete')
      A                                      CF12(12 'Cancel')
      A                                 19  3'-----------------------------------
@@ -39,7 +42,7 @@
      A                                 20  4'1. Nominate This Exhibit for Award'
      A                                 21  4'2. Sign Exhibit Guestbook'
      A                                 22  4'3. Read Exhibit Guestbook'
-     A                                 23 33'Type Exhibit ID:'
+     A                                 23 33'LRN400? (0 No / 1 Yes)'
      A                                  1  3'WELCOME TO...'
      A                                  3  3'HOSTED'
      A                                  3 10'BY'
@@ -49,7 +52,6 @@
      A                                      -------'
      A                                 22 33'Type Associated USRPRF:'
      A            INUSRPRF       9A  B 22 66
-     A            INEXHBID       3Y 0I 23 66
      A            INTITLE       60A  B  2  7CHECK(LC)
      A            INNAME        20A  B  3 13CHECK(LC)
      A            INCITY        15A  B  3 42CHECK(LC)
@@ -60,6 +62,7 @@
      A            ERRLINE       30A  O 18  3
      A                                 24  5'ENTER = Save  F5 = Delete  F12 = C-
      A                                      ancel'
+     A            INLRN400EN     1   B 23 66
      A          R ADMPSWRD
      A*%%TS  SD  20231020  192331  QSECOFR     REL-V4R4M0  5769-PW1
      A                                  4  5'Are you sure you want to exit the -

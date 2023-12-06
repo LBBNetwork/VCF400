@@ -13,10 +13,14 @@
      C                   ENDIF
      C
      C                   IF        INOPT = 2
-     C                   CALL      'ADDGBSTUB'
+     C* todo: add logic for learn/400 nonsense
      C                   ENDIF
      C
      C                   IF        INOPT = 3
+     C                   CALL      'ADDGBSTUB'
+     C                   ENDIF
+     C
+     C                   IF        INOPT = 4
      C                   CALL      'READGBSTUB'
      C                   ENDIF
      C

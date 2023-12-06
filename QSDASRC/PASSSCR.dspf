@@ -1,0 +1,7 @@
+     A*%%TS  SD  20231205  183421  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R PASSMAIN
+     A*%%TS  SD  20231205  183421  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  3  6'Enter Access Code:'
+     A            INPSWRD        9   I  4  6
