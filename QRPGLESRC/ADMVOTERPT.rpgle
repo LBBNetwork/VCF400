@@ -89,6 +89,9 @@
      C     CHKPARM       BEGSR
      C                   MOVEL     LAUNCH        USERPROF
      C*                  MOVEL     EXHIBIT       EDTEXHB
-     C*TODO HERE: Logic to do the stuff to validate user is
-     C*a SECOFR in the SECOFRS file
+     C*    USERPROF      CHAIN     USRPROFR                           90
+     C*                  IF        *IN90 = *OFF
+     C*                  MOVEL     *ON           *INLR
+     C*                  RETURN
+     C*                  ENDIF
      C                   ENDSR

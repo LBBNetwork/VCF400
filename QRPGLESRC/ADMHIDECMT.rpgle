@@ -1,3 +1,4 @@
+     FSECOFRS   IF   E           K DISK
      FGUESTBKDB UF A E           K DISK
      FGUESTBKSCRCF   E             WORKSTN
      DID               S              4P 0
@@ -55,6 +56,11 @@
      C                   IF        CHECKOK = 0
      C                   MOVEL     ERRYN         ERRLINE
      C                   ENDIF
+     C                   ENDSR
+     C*-------------------------------------------------------
+     C     CHKUSRPRF     BEGSR
+     C*TODO: Logic for validating passed userprofile is found in
+     C*SECOFRS file
      C                   ENDSR
      C*-------------------------------------------------------
      C     CHKPARM       BEGSR

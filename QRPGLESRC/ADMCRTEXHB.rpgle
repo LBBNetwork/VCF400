@@ -83,7 +83,7 @@
      C                   MOVEL     EXHBDESC      INDESC
      C                   MOVEL     ELIGIBLE      INELIGIBLE
      C                   MOVEL     EXHUSRPRF     INUSRPRF
-     C*                  MOVEL     EXHBDBID      INEXHBID
+     C                   MOVEL     ENLRN400      INLRN400EN
      C                   MOVEL     1             NEWOREDT
      C                   ELSE
      C                   MOVEL     EDTEXHB       INUSRPRF
@@ -110,6 +110,7 @@
      C                   MOVEL     INDESC        EXHBDESC
      C                   MOVEL     INELIGIBLE    ELIGIBLE
      C                   MOVEL     INUSRPRF      EXHUSRPRF
+     C                   MOVEL     INLRN400EN    ENLRN400
      C*                  MOVEL     INEXHBID      EXHBDBID
      C                   IF        NEWOREDT = 0
      C     INUSRPRF      CHAIN     EXHBREC                            96

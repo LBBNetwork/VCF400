@@ -11,7 +11,6 @@ Source Layout:
 * QMNUSRC:	This library contains the source for all menus
 * QSDASRC:	This library contains the DDS for all RPG screen descriptions
 * QRLUSRC:      This library contains the DDS for output specifications
-
 * QRPGLESRC:	This library contains the RPG IV/ILE source code for all applications
 * QCLSRC:       This library contains the CL source for helper programs (think batch/shell script)
 
@@ -21,6 +20,11 @@ Beta 2 TODO List:
 * Create admin tool for setting VCF security officers (SECOFRS PF)
 * Enforce password logout in EXHBMENU, SECOFR login on all admin tools
 * Add password stubs to "Sign Off" and "Admin Tools" on menu VCFMAIN
+
+I think I'm going to not bother with protecting the admin tools... this release.
+
+
 * Create CL stub for ADMCRTEXHB so you don't have to manually type CALL ADMCRTEXHB PARM... all the time
-* Update EXHBMENU to show 4th menu option - "Tour This Exhibit" controlled by flag in EXHBDB
-* Update EXHBDB to add field for LEARN/400 support
+* Update EXHBMENU to show 4th menu option - "Tour This Exhibit" controlled by flag in EXHBDB (Working)
+* Update EXHBDB to add field for LEARN/400 support (Working)
+* Add receipt printer support to voting program

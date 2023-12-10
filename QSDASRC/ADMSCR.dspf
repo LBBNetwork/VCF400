@@ -1,0 +1,15 @@
+     A*%%TS  SD  20231209  124709  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R ADDADM
+     A*%%TS  SD  20231209  124709  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  1  3'VCF/400 - Add Admin'
+     A                                  3  3'Admin USRPRF to add:'
+     A            INADMNAME      9A  I  4  4
+     A                                  8  3'Press ENTER to add admin to DB'
+     A          R LISTADMRCD
+     A*%%TS  SD  20231209  124038  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  1  3'VCF/400 - View List of Admins'
+     A                                  3  3'This is a placeholder page. I need-
+     A                                       to implement this as a SUBFILE!'
+     A                                  9  3'Press ENTER to EXIT'

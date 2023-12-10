@@ -1,8 +1,8 @@
-     A*%%TS  SD  20231106  192843  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231119  141220  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R VOTE1
-     A*%%TS  SD  20231106  192843  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231119  141220  QSECOFR     REL-V4R4M0  5769-PW1
      A                                      CF05(05 'Submit')
      A                                      CF12(12 'Cancel')
      A                                  1  3'VINTAGE COMPUTER FESTIVAL'
@@ -42,11 +42,10 @@
      A                                  7  4'-----------------------------------
      A                                      ------------------------------------
      A                                      -----'
-     A                                 23 67'V1R0M3'
+     A                                 23 67'V1R0M4'
      A                                 15  4'You may only vote for ONE award.'
      A                                      COLOR(RED)
      A                                 15 38'Choose your nomination carefully!'
-     A                                 17 47'TEST / DEBUG VERSION!'
      A            INEXHB         9A  B  4 58
      A  70                                  DSPATR(PR)
      A                                      COLOR(WHT)

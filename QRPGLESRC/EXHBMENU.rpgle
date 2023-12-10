@@ -1,6 +1,7 @@
      FEXHBDB    IF   E           K DISK
      FEXHBMENUSCCF   E             WORKSTN
      DUSERPROF         S              9A
+     DCHKLRN400        S              1P 0
      C     *ENTRY        PLIST
      C                   PARM                    LAUNCH            9
      C*-----------------------------------------------------------------------
@@ -13,7 +14,7 @@
      C                   ENDIF
      C
      C                   IF        INOPT = 2
-     C* todo: add logic for learn/400 nonsense
+     C                   EXSR      DOLRN400
      C                   ENDIF
      C
      C                   IF        INOPT = 3
@@ -27,6 +28,12 @@
      C                   IF        INOPT = 7
      C                   EXSR      ADMKIOSK
      C                   ENDIF
+     C*------------------------------------------------------------------------
+     C     DOLRN400      BEGSR
+     C                   IF        CHKLRN400 = 1
+     C                   CALL      'LRN400STUB'
+     C                   ENDIF
+     C                   ENDSR
      C*------------------------------------------------------------------------
      C     ADMKIOSK      BEGSR
      C*******************EXFMT     ADMPSWRD
@@ -44,4 +51,12 @@
      C                   MOVEL     EXHBCITY      OUTCITY
      C                   MOVEL     EXHBSTATE     OUTSTATE
      C                   MOVEL     EXHBDESC      OUTDESC
+     C                   MOVEL     ENLRN400      CHKLRN400
+     C
+     C                   IF        CHKLRN400 = 1
+     C                   EVAL      *IN40 = *OFF
+     C                   ELSE
+     C                   EVAL      *IN40 = *ON
+     C                   ENDIF
+     C
      C                   ENDSR
