@@ -16,15 +16,11 @@ Source Layout:
 
 
 Beta 2 TODO List:
-* Create admin tool for setting passwords
-* Create admin tool for setting VCF security officers (SECOFRS PF)
-* Enforce password logout in EXHBMENU, SECOFR login on all admin tools
-* Add password stubs to "Sign Off" and "Admin Tools" on menu VCFMAIN
-
-I think I'm going to not bother with protecting the admin tools... this release.
 
 
 * Create CL stub for ADMCRTEXHB so you don't have to manually type CALL ADMCRTEXHB PARM... all the time
-* Update EXHBMENU to show 4th menu option - "Tour This Exhibit" controlled by flag in EXHBDB (Working)
-* Update EXHBDB to add field for LEARN/400 support (Working)
-* Add receipt printer support to voting program
+* Password protect EXHBMENU's exit option (Completed)
+* Finish ADMSETTING (the only setting right now is the admin password, I think I'm just going to be lazy and set that as a DFU program)
+* Add function to ADDVOTE to block execution if voting has ended
+* Add screen to ADDVOTE to politely inform user that the exhibit is not eligible for awards on launch instead of going through the whole application
+* Add receipt printer support to voting program (started editing the RLU, not working yet)

@@ -1,12 +1,15 @@
      FEXHBDB    IF   E           K DISK
+     FSETTINGS  IF   E           K DISK
      FEXHBMENUSCCF   E             WORKSTN
      DUSERPROF         S              9A
+     DEXITPSWRD        S              9A
      DCHKLRN400        S              1P 0
      C     *ENTRY        PLIST
      C                   PARM                    LAUNCH            9
      C*-----------------------------------------------------------------------
      C*                  MOVEL     LAUNCH        PARMOUT
      C                   EXSR      CHKPARM
+     C                   EXSR      GETPSWRD
      C                   EXFMT     MENU
      C
      C                   IF        INOPT = 1
@@ -36,10 +39,17 @@
      C                   ENDSR
      C*------------------------------------------------------------------------
      C     ADMKIOSK      BEGSR
-     C*******************EXFMT     ADMPSWRD
-     C*******************IF        PSWRD = 'MAGIC'
+     C                   EXFMT     ADMPSWRD
+     C                   IF        INPWD = EXITPSWRD
      C                   MOVEL     *ON           *INLR
      C                   RETURN
+     C                   ENDIF
+     C                   ENDSR
+     C*-------------------------------------------------------------------------
+     C     GETPSWRD      BEGSR
+     C     *LOVAL        SETLL     SETTINGSR
+     C                   READ      SETTINGS
+     C                   MOVEL     VALUE         EXITPSWRD
      C                   ENDSR
      C*-------------------------------------------------------------------------
      C     CHKPARM       BEGSR

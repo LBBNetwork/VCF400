@@ -1,0 +1,28 @@
+     A*%%TS  SD  20231219  212526  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R SFLDATA                   SFL
+     A*%%TS  SD  20231219  212526  QSECOFR     REL-V4R4M0  5769-PW1
+     A            SPEAKER   R        O  7  2REFFLD(BMOVREC/SPEAKER VCF/BMOVDB)
+     A                                      COLOR(BLU)
+     A            LINE      R        O  7 13REFFLD(BMOVREC/LINE VCF/BMOVDB)
+     A                                      COLOR(BLU)
+     A          R SFLCTL                    SFLCTL(SFLDATA)
+     A*%%TS  SD  20231219  212526  QSECOFR     REL-V4R4M0  5769-PW1
+     A  50                                  SFLDSP
+     A  50                                  SFLDSPCTL
+     A N50                                  SFLCLR
+     A  50                                  SFLEND(*MORE)
+     A                                      SFLSIZ(0100)
+     A                                      SFLPAG(0010)
+     A                                  1  2DATE
+     A                                      EDTCDE(Y)
+     A                                  1 11TIME
+     A                                  1 24'SCREENPLAY DATABASE PROGRAM'
+     A                                      COLOR(WHT)
+     A                                  3  3'Roll Up / Down = Scroll  F3 = Exit'
+     A                                      COLOR(BLU)
+     A                                  5  2'Character'
+     A                                      COLOR(WHT)
+     A                                  5 13'Spoken Line'
+     A                                      COLOR(WHT)

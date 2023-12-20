@@ -1,4 +1,4 @@
-     A*%%TS  SD  20231205  185250  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231219  203507  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R MENU
@@ -64,12 +64,12 @@
      A                                      ancel'
      A            INLRN400EN     1   B 23 66
      A          R ADMPSWRD
-     A*%%TS  SD  20231020  192331  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231219  203507  QSECOFR     REL-V4R4M0  5769-PW1
      A                                  4  5'Are you sure you want to exit the -
      A                                      kiosk?'
      A                                  5  5'Type the Administrator password, p-
      A                                      ress ENTER to sign off'
-     A            FLD001         9   I  7  5
+     A            INPWD          9A  I  7  5
      A          R ADMDELETE
      A*%%TS  SD  20231028  213249  QSECOFR     REL-V4R4M0  5769-PW1
      A                                      CF12(12 'Cancel')
