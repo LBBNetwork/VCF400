@@ -1,17 +1,16 @@
-     A*%%TS  SD  20231205  183850  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231214  210736  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R SETUPMAIN
-     A*%%TS  SD  20231205  183850  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231214  210736  QSECOFR     REL-V4R4M0  5769-PW1
      A                                  1  3'VCF/400 - Configure VCF/400 Settin-
      A                                      gs'
      A                                  3  3'Admin Password:'
      A                                  4  9'(For exiting Exhibit Menu and star-
      A                                      ting Admin tools.)'
-     A                                  6  3'Select VCF:'
-     A                                  7  9'(1=West, 2=East, 3=PNW, 4=Midwest,-
-     A                                       5=SW, 6=Europa, 7=GB, 8=Zurich,'
-     A                                  8 10'9=Italia, 0=SE)'
      A                                 11  4'Press ENTER to save your settings.'
-     A            FLD001         9   B  3 20
-     A            FLD002         1   B  6 20
+     A            INPWD          9A  B  3 20
+     A                                  6  3'Enable Voting:'
+     A            INALWVOTE      1   B  6 20
+     A                                  7  9'(1 = Voting is enabled, 0 = Voting-
+     A                                       is Disabled)'

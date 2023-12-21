@@ -1,4 +1,4 @@
-     A*%%TS  SD  20231119  141220  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%TS  SD  20231220  181647  QSECOFR     REL-V4R4M0  5769-PW1
      A*%%EC
      A                                      DSPSIZ(24 80 *DS3)
      A          R VOTE1
@@ -160,3 +160,27 @@
      A                                 23  3'¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-
      A                                      ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-
      A                                      ¬¬¬¬¬¬¬'
+     A          R NOVOTEALWD
+     A*%%TS  SD  20231220  181647  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  1  4' ____   ___  ____  ______   ___ '
+     A                                  2  4'/ ___| / _ \|  _ \|  _ \ \ / / |'
+     A                                  3  4'\___ \| | | | |_) | |_) \ V /| |'
+     A                                  4  4' ___) | |_| |  _ <|  _ < | | |_|'
+     A                                  5  4'|____/ \___/|_| \_\_| \_\|_| (_)'
+     A                                  8  4'This exhibit is not eligible to re-
+     A                                      ceive votes.'
+     A                                  9  4'However, you may sign this exhibit-
+     A                                       guestbook if you would like.'
+     A                                 14  4'Press ENTER to exit.'
+     A          R ENDOFCON
+     A*%%TS  SD  20231220  181647  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  1  4' ____   ___  ____  ______   ___ '
+     A                                  2  4'/ ___| / _ \|  _ \|  _ \ \ / / |'
+     A                                  3  4'\___ \| | | | |_) | |_) \ V /| |'
+     A                                  4  4' ___) | |_| |  _ <|  _ < | | |_|'
+     A                                  5  4'|____/ \___/|_| \_\_| \_\|_| (_)'
+     A                                  8  4'The voting period has ended and yo-
+     A                                      u can no longer vote.'
+     A                                  9  4'However, you may sign this exhibit-
+     A                                       guestbook if you would like.'
+     A                                 14  4'Press ENTER to exit.'

@@ -3,17 +3,16 @@
      DID               S              4P 0
      C                   WRITE     RCD001
      C
-     C     *LOVAL        SETLL     GUESTBKDB
-     C                   READ      GUESTBKDB
+     C     *LOVAL        SETLL     VOTINGDB
+     C                   READ      VOTINGDB
      C
-     C                   DOU       %EOF(GUESTBKDB)
-     C                   READ      GUESTBKDB
+     C                   DOU       %EOF(VOTINGDB)
+     C                   READ      VOTINGDB
      C                   ENDDO
      C
      C                   WRITE     RCD002
      C                   WRITE     RCD003
-     C                   WRITE     CMTNBR
-     C                   WRITE     CMTDETAIL
+     C                   WRITE     EXHBOUT
      C
      C                   MOVEL     *ON           *INLR
      C                   RETURN
