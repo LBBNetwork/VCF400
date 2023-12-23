@@ -1,4 +1,4 @@
-     FBMOVDB    IF   E           K DISK
+     FBMOVDB    IF   E             DISK
      FBMOVSCR   CF   E             WORKSTN
      F                                     SFILE(SFLDATA:RRN#)
      D RRN#            S              4S 0

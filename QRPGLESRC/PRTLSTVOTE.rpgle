@@ -1,4 +1,4 @@
-     FVOTINGDB  IF   E           K DISK
+     FVOTINGDB  IF   E             DISK
      FVOTEPRTF  O    E             PRINTER OFLIND(*IN01)
      DID               S              4P 0
      C                   WRITE     RCD001
