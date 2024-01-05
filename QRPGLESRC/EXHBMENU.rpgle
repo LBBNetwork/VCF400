@@ -1,5 +1,5 @@
      FEXHBDB    IF   E           K DISK
-     FSETTINGS  IF   E           K DISK
+     FSETTINGS  IF   E             DISK
      FEXHBMENUSCCF   E             WORKSTN
      DUSERPROF         S              9A
      DEXITPSWRD        S              9A
@@ -47,7 +47,7 @@
      C                   ENDSR
      C*-------------------------------------------------------------------------
      C     GETPSWRD      BEGSR
-     C     *LOVAL        SETLL     SETTINGSR
+     C     *START        SETLL     SETTINGS
      C                   READ      SETTINGS
      C                   MOVEL     VALUE         EXITPSWRD
      C                   ENDSR

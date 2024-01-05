@@ -19,8 +19,4 @@ Beta 2 TODO List:
 
 
 * Create CL stub for ADMCRTEXHB so you don't have to manually type CALL ADMCRTEXHB PARM... all the time
-* Finish ADMSETTING (the only setting right now is the admin password, I think I'm just going to be lazy and set that as a DFU program)
-* Add function to ADDVOTE to block execution if voting has ended (Completed)
-* Add screen to ADDVOTE to politely inform user that the exhibit is not eligible for awards on launch instead of going through the whole application (Not going to add)
-* Add receipt printer support to voting program (now working)
 
