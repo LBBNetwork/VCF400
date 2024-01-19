@@ -1,10 +1,81 @@
 LEARN/400 Page Programming Guide
 
-For the most part, LEARN/400 is a straightforward application. 
-You start ADMLRN400 with your SECOFR parameter and you can immediately begin editing
-each page of the file. The editor is effectively WYSIWYG, where the main ~1,000 character
+To start LEARN/400, compile the following from source in this order:
+QDDSSRC/LRN400STR
+QSDASRC/LRN400SCR
+QRPGLESRC/ADMLRN400
+QRPGLESRC/LRN400
+
+In Beta 1/2, once all files are compiled, you will then need to STRDFU and
+create a data file utility for use with LRN400STR. Use your DFU program to
+add dummy data to the file and save; LRN400 does not handle empty PFs gracefully
+yet. 
+
+Once you have created your dummy content, you can exit your DFU tool. Now you
+must determine if you will be the sole LEARN/400 user, if you will be using
+LRN400AUT (teletext-style autoscroller), and if you will be offering LEARN/400
+to multiple users.
+
+-------------------------------------------------------------------------------
+
+If you are creating a tour file for a single exhibit or you do not wish to use
+LRN400AUT, you can simply use ADMLRN400 to edit your tour as you wish. 
+If you will be using LRN400AUT or are configuring multiple users for LEARN/400, 
+you will need to make duplicates of the LRN400STR file. Make sure to set "Copy
+Data" to *YES or else you will need to run your DFU file again on the copied file.
+
+If making a copy for LRN400AUT use, you must name the copied file LRNAUTSTR.
+If making a copy for multiple exhibitors, the copied filename must match the
+USRPRF name for the other exhibitors.
+
+You will then need to OVRDBF LRN400STR to your copied file. Make sure to
+DLTOVR when you are finished editing.
+
+-------------------------------------------------------------------------------
+
+If you will be using LRN400AUT, you must compile the following files in this order:
+QSDASRC/LRNAUTO
+QRPGLESRC/LRN400AUT
+
+When compiling QSDASRC/LRNAUTO, you must also specify the WAITRCD parameter.
+The WAITRCD parameter specifies in seconds how long to delay before moving onto
+the next LEARN/400 screen. This delay is entirely up to your personal preference.
+
+-------------------------------------------------------------------------------
+
+If you are setting up LEARN/400 for multiple users, you will also need to compile
+the file QCLSRC/LRN400STUB as the Exhibitor Menu does a direct CALL LRN400STUB
+in order to set the correct environment for the LEARN/400 user.
+
+-------------------------------------------------------------------------------
+
+Once you have determined how you will be using LEARN/400 for your environment,
+you can start the editor by running
+
+CALL ADMLRN400
+
+at the OS/400 command line. The editor is effectively WYSIWYG, where the main ~1,000 character
 screen can be laid out however you wish (barring reserved characters in OS/400 DBs), but
 there are some special considerations.
+
+For maximum compatibility, you will want to keep your page conetnt confined to the
+boundaries of the top and bottom separator lines. You can go over, but the page may shift
+and give you undesirable results or be cut off when using some VGA logic modules with LCD
+monitors and projectors.
+
+To create a new, blank page, press F5 to go forward. This will create a new empty page.
+To go back a page, press F8.
+To save a page, press F10. LEARN/400 currently does NOT support unsaved data warnings,
+so be careful when navigating to other pages after making edits.
+
+When erasing existing content, it is recommended to type over the old content. Using BACKSPACE
+causes page content to shift backwards which may cause undesirable results.
+
+LEARN/400 does not currently have a delete page function or an Erase All button. This will
+probably be coming in a later release. If you have content that you do not want people to see,
+it is recommended to just use the JUMP keyword to jump over the unwanted page.
+
+-------------------------------------------------------------------------------
 
 To assist with page automation, the following keywords are reserved by LEARN/400's main data field,
 and one optional parameter is allowed in the EXTRA field. The valid keywords are: 
@@ -16,3 +87,4 @@ Additionally, the main data field can be augmented with the following keywords i
 further functionality:
 
 END: Tells LEARN/400 that pressing the Page Forward key should end the program.
+(In LRN400AUT, END is used to signal End-of-File and to wrap around to Record 1.)

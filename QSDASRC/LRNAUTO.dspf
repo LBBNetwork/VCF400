@@ -1,0 +1,49 @@
+     A*%%TS  SD  20231118  135705  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R MAIN
+     A*%%TS  SD  20231116  225034  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF03(03 'Exit')
+     A                                      CF05(05 'Fwd')
+     A                                      CF08(08 'Back')
+     A                                      INVITE
+     A                                  1  3'LEARN/400'
+     A            OUTPAGENBR     4A  O  1 76
+     A                                  1 70'Page'
+     A                                  2  3'__________________________________-
+     A                                      ___________________________________-
+     A                                      ________'
+     A                                 23  3'Cmd3/F3 = Exit  Cmd5/F5 = Forwards-
+     A                                        Cmd8 / F8 = Backwards'
+     A                                      COLOR(BLU)
+     A                                 22  3'__________________________________-
+     A                                      ___________________________________-
+     A                                      ________'
+     A                                      COLOR(BLU)
+     A            OUTCONTENT  1500A  O  3  1COLOR(WHT)
+     A          R MAINADMIN
+     A*%%TS  SD  20231118  135705  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                      CF05(05 'Fwd')
+     A                                      CF08(08 'Back')
+     A                                      CF03(03 'Exit')
+     A                                      CF10(10 'Save')
+     A                                  1  3'LEARN/400'
+     A            OUTPAGENBR     4A  O  1 76
+     A                                  1 70'Page'
+     A                                  2  3'__________________________________-
+     A                                      ___________________________________-
+     A                                      ________'
+     A                                 23  3'F3 = Exit F5 = Fwd F8 = Back F10 =-
+     A                                       Save'
+     A                                      COLOR(BLU)
+     A                                 22  3'__________________________________-
+     A                                      ___________________________________-
+     A                                      ________'
+     A            INCONTENT   1500A  B  3  1CHECK(LC)
+     A                                      COLOR(WHT)
+     A                                 23 63'EXTRA:'
+     A                                      COLOR(BLU)
+     A                                  1 65'NEW'
+     A                                      DSPATR(RI)
+     A  60                                  DSPATR(ND)
+     A            INEXTRA        9   B 23 70COLOR(BLU)

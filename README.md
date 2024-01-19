@@ -3,7 +3,7 @@
 
  Licensed under the Pirate License, see LICENSE.TXT for more details
 
- Beta 1 now out! See /SAVF for files
+ Happy new year, Beta 2 now out! See /SAVF for files
 
 Source Layout:
 
