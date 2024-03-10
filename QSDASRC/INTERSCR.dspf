@@ -1,0 +1,44 @@
+     A*%%TS  SD  20240310  142358  QSECOFR     REL-V4R4M0  5769-PW1
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R INTERTEST
+     A*%%TS  SD  20240310  142358  QSECOFR     REL-V4R4M0  5769-PW1
+     A                                  1  3'VCF/400 - How to Navigate'
+     A                                  3  3'Before you start, here is how to n-
+     A                                      avigate:'
+     A                                  4  3'-----------------------------------
+     A                                      ------------------------------------
+     A                                      --------'
+     A                                      COLOR(WHT)
+     A                                  5  3'Use'
+     A                                  5  7'ARROW KEYS'
+     A                                      COLOR(BLU)
+     A                                  5 18'or'
+     A                                  5 21'TAB KEY'
+     A                                      COLOR(BLU)
+     A                                  5 29'to move between fields.'
+     A                                  7  3'Use'
+     A                                  7  7'F5'
+     A                                      COLOR(BLU)
+     A                                  7 10'or'
+     A                                  7 13'ENTER'
+     A                                      COLOR(BLU)
+     A                                  7 19'to perform your action.  '
+     A                                  9  3'Use'
+     A                                  9  7'F12'
+     A                                      COLOR(BLU)
+     A                                  9 11'to quit at any time.'
+     A                                 12  3'Keyboard not responding? If you se-
+     A                                      e'
+     A                                 12 39'X II'
+     A                                      COLOR(RED)
+     A                                 12 44'in the left corner, press'
+     A                                 12 70'RIGHT CTRL'
+     A                                      COLOR(BLU)
+     A                                 13  3'to continue.'
+     A                                 14  3'-----------------------------------
+     A                                      ------------------------------------
+     A                                      --------'
+     A                                      COLOR(WHT)
+     A                                 16 33'Got all that?'
+     A                                 17 28'Press ENTER to continue.'
