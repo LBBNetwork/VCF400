@@ -2,6 +2,8 @@
      FEXHBDB    IF   E           K DISK
      FGUESTBKSCRCF   E             WORKSTN
      DID               S              4P 0
+     DALWEXIT          S              1P 0
+     DVALIDATE         S              1P 0
      DUSERPRF          S              9A
      DERRCMTID         C                   CONST('Must enter CommentID')
      DERRHNAME         C                   CONST('Name Hidden')
@@ -18,13 +20,28 @@
      C                   PARM                    LAUNCH           20
      C*-----------------------------------------------
      C                   EXSR      CHKPARM
-     C                   DOW       *IN05 = *OFF
+     C
+     C                   MOVEL     0             ALWEXIT
+     C
+     C                   DOW       ALWEXIT = *ZERO
+     C                   MOVEL     0             VALIDATE
+     C
      C                   EXSR      GETTLCMT
      C                   EXFMT     READCMT
      C*
      C                   IF        INCMTID  = *ZERO
      C                   EVAL      ERRLINE = ERRCMTID
+     C                   EVAL      *IN43 = *ON
+     C                   ELSE
+     C                   ADD       1             VALIDATE
      C                   ENDIF
+     C
+     C                   EVAL      *IN05 = *OFF
+     C
+     C                   IF        VALIDATE = 1
+     C                   ADD       1             ALWEXIT
+     C                   ENDIF
+     C
      C                   IF        *IN12 = *ON
      C                   MOVEL     *ON           *INLR
      C                   RETURN

@@ -1,20 +1,26 @@
      FGUESTBKDB IF   E           K DISK
-     FTESTPRT2  O    E             PRINTER OFLIND(*IN01)
+     FCMTTST    O    E             PRINTER OFLIND(*IN01)
      DID               S              4P 0
-     C     *ENTRY        PLIST
-     C                   PARM                    LAUNCH            4
-     C
-     C                   MOVEL     LAUNCH        ID
-     C
+     DCOMMAND          S             10A
+     C                   EVAL      COMMAND = X'1B40'
+     C                   EXCEPT    INITP
      C
      C                   WRITE     RCD001
      C
-     C     ID            SETLL     GUESTBKDB
+     C     *LOVAL        SETLL     GUESTBKDB
      C                   READ      GUESTBKDB
+     C
+     C                   DOU       %EOF(GUESTBKDB)
+     C                   READ      GUESTBKDB
+     C                   ENDDO
      C
      C                   WRITE     RCD002
      C                   WRITE     RCD003
+     C                   WRITE     CMTNBR
      C                   WRITE     CMTDETAIL
+     C
+     C                   EVAL      PRTCMD  = X'1D56'
+     C                   EXCEPT    INITP
      C
      C                   MOVEL     *ON           *INLR
      C                   RETURN
